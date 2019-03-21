@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="actions" (click)="setDefaults()">Set Defaults</div>
+    </div>
+    <div class="row" *ngFor="let card of allCards">
+        <div class="col-6">
+            <div class="card">
+                {{card.name}}
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card-actions">
+                <div class="card-action subtract" (click)="removeCard(card.name)">
+                    -
+                </div>
+
+                <div class="card-amount">
+                    {{deck.count(card.name)}}
+                </div>
+
+                <div class="card-action add" (click)="addCard(card.name)">
+                    +
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

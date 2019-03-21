@@ -1,0 +1,14 @@
+@import "../../assets/colors.scss";
+
+.container {
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    overflow: auto;
+
+    app-tile {
+        display: inline-block;
+        width: 100%;
+    }
+}

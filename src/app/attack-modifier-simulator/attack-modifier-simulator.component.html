@@ -1,0 +1,114 @@
+<div class="outer" [style.height.px]="windowHeight" [style.width.px]="windowWidth">
+    <div class="container">
+        <div class="top-bar">
+            <span class="character-name">{{character.name}}</span>
+            <span class="pull-right">Round {{roundCounter}}</span>
+        </div>
+
+        <div class="row attack-container" [style.height.px]="attacksHeight">
+            <div class="attack" [ngClass]="{'committed-attack': attack.committed}" *ngFor="let attack of attacks.getAll()">
+                <span class="attack-value">
+                    <!-- <i *ngIf="attack.disadvantaged" class="ra ra-uncertainty"></i>
+                    <i *ngIf="attack.advantaged" class="ra ra-muscle-up"></i> -->
+                    <i class="ra ra-sword"></i>
+                    <span *ngIf="!attack.committed">{{baseDamage.value}}</span>
+                    <span *ngIf="attack.committed">{{attack.value}}</span>
+                </span>
+                <span *ngIf="attack.pierce" class="gh-icon pierce"><sub>{{attack.pierce}}</sub></span>
+                <span *ngIf="attack.push">PUSH {{attack.push}}</span>
+                <span *ngIf="attack.pull">PULL {{attack.pull}}</span>
+                <span *ngIf="attack.poison" class="gh-icon poison"></span>
+                <span *ngIf="attack.wound" class="gh-icon wound"></span>
+                <span *ngIf="attack.disarm" class="gh-icon disarm"></span>
+                <span *ngIf="attack.stun" class="gh-icon stun"></span>
+                <span *ngIf="attack.strengthen" class="gh-icon strengthen"></span>
+                <span *ngIf="attack.invisible" class="gh-icon invis"></span>
+                <span *ngIf="attack.muddle" class="gh-icon muddle"></span>
+                <span *ngIf="attack.fire" class="gh-icon fire"></span>
+                <span *ngIf="attack.ice" class="gh-icon ice"></span>
+                <span *ngIf="attack.nature" class="gh-icon nature"></span>
+                <span *ngIf="attack.wind" class="gh-icon wind"></span>
+                <span *ngIf="attack.light" class="gh-icon light"></span>
+                <span *ngIf="attack.darkness" class="gh-icon darkness"></span>
+            </div>
+        </div>
+
+        <!-- <div class="row attack-options">
+            <div class="col-6">
+                <span (click)="deck.reshuffle()" [ngClass]="{'requires-shuffle': deck.requiresShuffle}" title="Reshuffle"><i
+                        class="ra ra-recycle"></i></span>
+                <span (click)="proceedToNextRound()" title="End Round"><i class="ra ra-hourglass pull-right"></i></span>
+            </div>
+            <div class="col-6">
+                <span (click)="toggleDisadvantage()" [ngClass]="{'toggled': deck.disadvantaged}" title="Disadvantage"><i
+                        class="ra ra-uncertainty pull-right"></i></span>
+                <span (click)="toggleAdvantage()" [ngClass]="{'toggled': deck.advantaged}" title="Advantage"><i class="ra ra-muscle-up pull-right"></i></span>
+                <span (click)="createNewAttack()" title="Add Target"><i class="ra ra-targeted pull-right"></i></span>
+            </div>
+        </div> -->
+
+        <div class="row attack-footer">
+            <div class="attack" title="Attack" (click)="numpadEnabled = !numpadEnabled"></div>
+            <!-- <div class="col-6">
+                <div class="pile" *ngIf="deck.discard.length" (click)="toggleCardHistory()">
+                    <span class="cards-remaining">{{deck.discard.length}}</span>
+                    {{deck.discard[deck.discard.length - 1].name}}
+                </div>
+                <div class="pile" *ngIf="!deck.discard.length" (click)="toggleCardHistory()">
+                    Empty
+                </div>
+            </div>
+            <div class="col-6" (click)="createNewAttack(); deck.attack(this.attacks.currentAttack)">
+                <div class="pile">
+                    <span class="cards-remaining">{{deck.cards.length}}</span>
+                    <span>Attack for
+                        {{baseDamage.value}}</span>
+                </div>
+            </div> -->
+            <span class="end-round dashed-button" (click)="proceedToNextRound()">End Round</span>
+        </div>
+
+        <div class="row card-history" *ngIf="cardHistoryVisible">
+            <div class="history-card shadow-3" *ngFor="let card of deck.discard.slice().reverse()">
+                {{card.name}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="numpadEnabled" class="numpad">
+    <div class="row">
+        <div class="col-3" (click)="bless()"><div class="gh-icon bless" ></div><sub>{{deck.blessCount}}</sub></div>
+        <div class="col-3" (click)="curse()"><div class="gh-icon curse" ></div><sub>{{deck.curseCount}}</sub></div>
+    </div>
+    <div class="row">
+        <div class="col-3" (click)="clickNum(1)">1</div>
+        <div class="col-3" (click)="clickNum(2)">2</div>
+        <div class="col-3" (click)="clickNum(3)">3</div>
+        <div class="col-3 base-damage">{{baseDamage.value}}</div>
+    </div>
+    <div class="row">
+        <div class="col-3" (click)="clickNum(4)">4</div>
+        <div class="col-3" (click)="clickNum(5)">5</div>
+        <div class="col-3" (click)="clickNum(6)">6</div>
+        <div class="col-3" (click)="toggleAdvantage()" [ngClass]="{'toggled': deck.advantaged}" >
+            <div class="gh-icon strengthen"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" (click)="clickNum(7)">7</div>
+        <div class="col-3" (click)="clickNum(8)">8</div>
+        <div class="col-3" (click)="clickNum(9)">9</div>
+        <div class="col-3" (click)="toggleDisadvantage()" [ngClass]="{'toggled': deck.disadvantaged}" >
+            <div class="gh-icon muddle" ></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" (click)="baseDamage.setValue(0)"><i class="material-icons">cancel</i></div>
+        <div class="col-3">0</div>
+        <div class="col-3" (click)="clickBackspace()"><i class="material-icons">backspace</i></div>
+        <div class="col-3" (click)="createNewAttack(); deck.attack(this.attacks.currentAttack)">
+            <i class="material-icons">check</i>
+        </div>
+    </div>
+</div>
