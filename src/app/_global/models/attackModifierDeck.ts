@@ -6,6 +6,8 @@ import { Character } from './character';
 export class AttackModifierDeck {
     constructor() {
         this.discard = [];
+        this.animationQueue = [];
+        this.requiresShuffle = false;
         // Instantiate with standard attack modifier deck
         this.cards = [
             Cards.Plus1.clone(),
@@ -29,33 +31,11 @@ export class AttackModifierDeck {
             Cards.Plus2.clone(),
             Cards.x2.clone()
         ];
-        // this.cards = [
-        //     Cards.Plus1.clone(),
-        //     Cards.Plus2.clone(),
-        //     Cards.x2.clone(),
-        //     Cards.Zero.clone(),
-        //     Cards.rollingFire.clone(),
-        //     Cards.rollingNature.clone(),
-        //     // Cards.rollingWind.clone(),
-        //     // Cards.rollingIce.clone(),
-        //     // Cards.rollingDarkness.clone(),
-        //     // Cards.rollingLight.clone(),
-        //     // Cards.rollingStun.clone(),
-        //     // Cards.rollingInvisible.clone(),
-        //     // Cards.rollingDisarm.clone(),
-        //     Cards.rollingPoison.clone(),
-        //     // Cards.rollingWound.clone(),
-        //     // Cards.rollingImmobilize.clone(),
-        //     // Cards.rollingStrengthen.clone(),
-        //     // Cards.rollingMuddle.clone()
-        //     Cards.rollingPierce3.clone(),
-        //     // Cards.pull1Plus1.clone(),
-        //     // Cards.push1Plus1.clone()
-        // ];
     }
     requiresShuffle: boolean;
     cards: AttackModifierCard[];
     discard: AttackModifierCard[];
+    animationQueue: AttackModifierCard[];
     character: Character;
     advantaged: boolean;
     disadvantaged: boolean;
@@ -86,8 +66,7 @@ export class AttackModifierDeck {
     public mapCards(cards) {
         this.cards = []; // Clear out existing deck if any
         cards.forEach(card => {
-            const newCard = new AttackModifierCard();
-            Object.assign(newCard, card);
+            const newCard = Cards.retrieveCard(card.name);
             this.cards.push(newCard);
         });
     }
@@ -101,6 +80,9 @@ export class AttackModifierDeck {
         if (attack.committed) {
             console.log('Adding card to committed attack.');
         }
+
+        // Clear animation queue
+        this.animationQueue = [];
 
         // Apply advantage effects based on character status
         attack.disadvantaged = this.disadvantaged || attack.disadvantaged || this.character.muddled;
@@ -176,6 +158,8 @@ export class AttackModifierDeck {
 
         const attack = new Attack(0);
         const card = this.cards.pop(); // Pop card from deck
+        this.animationQueue.push(card);
+
         // card.animate(); // Play animation
         if (!card.consumed) {
             this.discard.push(card); // Put in discard pile
@@ -187,12 +171,18 @@ export class AttackModifierDeck {
             }
             console.log(`Consuming ${card.name}`);
         }
+
+        // Check if card has shuffler flag on it
+        if (card.shuffler) {
+            this.requiresShuffle = true;
+        }
+
         card.modifyAttack(attack); // Modify temp attack
         console.log('Drew ', card);
         return { card, attack };
     }
 
-    private rollingDraw(attack?: Attack) {
+    private rollingDraw(attack?: Attack, disadvantaged?: boolean) {
         if (!attack) { attack = new Attack(0); }
         let card = null;
         do {
@@ -200,12 +190,14 @@ export class AttackModifierDeck {
             if (!draw) { return; }
             card = draw.card;
             card.modifyAttack(attack); // Modify temp attack
-
-            // Check if card has shuffler flag on it
-            if (card.shuffler) {
-                this.requiresShuffle = true;
-            }
         } while (card.chained);
+
+        // If disadvantaged, only use the last value for the attack
+        if (disadvantaged) {
+            attack = new Attack(0); // fresh attack
+            card.modifyAttack(attack);
+        }
+
         return { card, attack };
     }
 

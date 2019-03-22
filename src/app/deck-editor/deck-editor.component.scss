@@ -1,6 +1,5 @@
-@import "../../assets/colors";
-@import "../../assets/icons";
-@import "../../assets/cards";
+@import "../_global/styling/colors";
+@import "../_global/styling/icons";
 
 .container {
     overflow: auto;
@@ -39,7 +38,7 @@
 
         &.subtract {
             background-color: $red;
-            background: url("../../assets/images/cards/minus1.png") no-repeat;
+            background: url("~/assets/images/cards/minus1.png") no-repeat;
             background-size: 100px;
             background-position-x: 50%;
             background-position-y: 50%;
@@ -48,7 +47,7 @@
 
         &.add {
             background-color: $green;
-            background: url("../../assets/images/cards/plus1.png") no-repeat;
+            background: url("~/assets/images/cards/plus1.png") no-repeat;
             background-size: 100px;
             background-position-x: 50%;
             background-position-y: 50%;

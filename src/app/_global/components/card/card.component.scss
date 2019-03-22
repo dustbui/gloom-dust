@@ -1,9 +1,10 @@
+@import "../../styling/icons";
+
 .card {
     // Maintain the aspect ratio ot 1:0.675
     // width: 200px;
     // height: 135px;
-    background-color: $dark;
-    background: url("../../assets/images/cards/cardback.jpg") no-repeat;
+    background: url("../../../../assets/images/cards/cardback.jpg") no-repeat;
     background-size: contain;
     position: relative;
 

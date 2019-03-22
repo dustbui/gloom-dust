@@ -172,3 +172,8 @@ export const allCards = [
     plus2Fire, plus2Ice, plus2Muddle, rollingPlus1
 ];
 
+export function retrieveCard(name: string) {
+    return this.allCards.find((c) => {
+        return name == c.name;
+    }).clone();
+}

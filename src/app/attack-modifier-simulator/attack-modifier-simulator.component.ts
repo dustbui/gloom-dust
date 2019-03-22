@@ -5,7 +5,7 @@ import { AttackModifierDeck } from '../_global/models/attackModifierDeck';
 import { Attack } from '../_global/models/attack';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Attacks } from '../_global/models/attacks';
-import { trigger, transition, animate, style } from '@angular/animations';
+import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
 import { Bless, Curse } from '../_global/data/attackModifierCards';
 
 @Component({
@@ -13,16 +13,20 @@ import { Bless, Curse } from '../_global/data/attackModifierCards';
     templateUrl: './attack-modifier-simulator.component.html',
     styleUrls: ['./attack-modifier-simulator.component.scss'],
     animations: [
-        trigger('slideInOut', [
-          transition(':enter', [
-            style({transform: 'translateX(1000%)'}),
-            animate('0.25s ease-in', style({transform: 'translateX(0%)'}))
-          ]),
-          transition(':leave', [
-            animate('0.25s ease-in', style({transform: 'translateX(-100%)'}))
-          ])
+        trigger('slideUp', [
+            transition(':enter', [
+                query('.drawn-card', [
+                    style({ transform: 'translateY(1000%)' }),
+                    stagger('300ms', [
+                        animate('0.33s ease-out', style({ transform: 'translateY(0%)' }))
+                    ])
+                ])
+            ]),
+            transition(':leave', [
+                animate('0.33s ease-out', style({ transform: 'translateY(-100%)' }))
+            ])
         ])
-      ]
+    ]
 })
 export class AttackModifierSimulatorComponent implements OnInit {
     private routeParam: string;
@@ -33,6 +37,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
     public attacksHeight: number;
     public character: Character = new Character();
     public deck: AttackModifierDeck;
+    public attack: Attack;
     public attacks: Attacks;
     public cardHistoryVisible = false;
     public numpadEnabled = false;
@@ -72,20 +77,28 @@ export class AttackModifierSimulatorComponent implements OnInit {
 
     public proceedToNextRound() {
         this.roundCounter++;
-
         if (this.deck.requiresShuffle) {
             this.deck.reshuffle();
         }
-
+        this.attack = null;
         this.attacks.reset(this.baseDamage.value);
+        this.deck.disadvantaged = false;
+        this.deck.advantaged = false;
+        this.deck.animationQueue = [];
     }
 
     public createNewAttack() {
         this.numpadEnabled = false;
-        if (this.attacks.length >= 9) { return; }
-        this.attacks.createAttack(new Attack(this.baseDamage.value));
-        this.baseDamage.setValue(0);
-        this.adjustHeights();
+        this.attack = null;
+        this.deck.animationQueue = [];
+
+        setTimeout(() => {
+            this.attack = new Attack(this.baseDamage.value);
+            this.attacks.createAttack(this.attack);
+            this.deck.attack(this.attacks.currentAttack);
+            this.baseDamage.setValue(0);
+            this.adjustHeights();
+        }, 200);
     }
 
     public toggleAdvantage() {
@@ -110,7 +123,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
         this.cardHistoryVisible = !this.cardHistoryVisible;
     }
 
-    public clickNum(num: number){
+    public clickNum(num: number) {
         let baseDamageString = this.baseDamage.value.toString();
         baseDamageString += num.toString();
         const baseDamage = parseInt(baseDamageString);

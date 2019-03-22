@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AttackModifierSimulatorComponent } from './attack-modifier-simulator/attack-modifier-simulator.component';
 import { DeckEditorComponent } from './deck-editor/deck-editor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardComponent } from './_global/components/card/card.component';
 
 @NgModule({
    declarations: [
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       MainComponent,
       TileComponent,
       NavComponent,
+      CardComponent,
       CharacterCreationComponent,
       CharacterCreationComponent,
       AttackModifierSimulatorComponent,

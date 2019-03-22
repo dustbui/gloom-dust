@@ -1,0 +1,100 @@
+$icon-size: 36px;
+
+.gh-icon {
+    width: $icon-size;
+    height: $icon-size;
+    display: inline-block;
+    background-size: $icon-size;
+    margin-left: 2px;
+    margin-right: 2px;
+
+    & .x2 {
+        width: $icon-size * 2;
+        height: $icon-size * 2;
+    }
+
+    sub {
+        margin-left: $icon-size;
+    }
+}
+
+
+.fire {
+    background-image: url("~/assets/images/icons/fire.png");
+}
+
+.ice {
+    background-image: url("~/assets/images/icons/ice.png");
+}
+
+.nature {
+    background-image: url("~/assets/images/icons/nature.png");
+}
+
+.wind {
+    background-image: url("~/assets/images/icons/wind.png");
+}
+
+.light {
+    background-image: url("~/assets/images/icons/light.png");
+}
+
+.darkness {
+    background-image: url("~/assets/images/icons/darkness.png");
+}
+
+.poison {
+    background-image: url("~/assets/images/icons/poison.png");
+}
+
+.wound {
+    background-image: url("~/assets/images/icons/wound.png");
+}
+
+.invis {
+    background-image: url("~/assets/images/icons/invisible.png");
+}
+
+.muddle {
+    background-image: url("~/assets/images/icons/muddle.png");
+}
+
+.strengthen {
+    background-image: url("~/assets/images/icons/strengthen.png");
+}
+
+.stun {
+    background-image: url("~/assets/images/icons/stun.png");
+}
+
+.disarm {
+    background-image: url("~/assets/images/icons/disarm.png");
+}
+
+.immobilize {
+    background-image: url("~/assets/images/icons/immobilize.png");
+}
+
+.pierce {
+    background-image: url("~/assets/images/icons/pierce.png");
+}
+
+.pull {
+    background-image: url("~/assets/images/icons/pull.png");
+}
+
+.push {
+    background-image: url("~/assets/images/icons/push.png");
+}
+
+.bless {
+    background-image: url("~/assets/images/icons/bless.png");
+}
+
+.curse {
+    background-image: url("~/assets/images/icons/curse.png");
+}
+
+.rolling {
+    background-image: url("~/assets/images/icons/rolling.png");
+}

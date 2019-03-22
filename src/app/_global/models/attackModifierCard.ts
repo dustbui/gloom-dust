@@ -80,9 +80,10 @@ export class AttackModifierCard {
         const newCard = new AttackModifierCard();
         newCard.id = this.name;
         newCard.name = this.name;
+        newCard.centerImageUrl = this.centerImageUrl;
+
         newCard.adder = this.adder;
         newCard.multiplier = this.multiplier;
-        newCard.centerImageUrl = this.centerImageUrl;
         newCard.chained = this.chained;
         newCard.shuffler = this.shuffler;
         newCard.multiplier = this.multiplier;
