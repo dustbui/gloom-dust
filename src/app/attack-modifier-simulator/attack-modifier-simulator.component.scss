@@ -13,6 +13,10 @@ $footer-size: 150px;
     }
 }
 
+.container {
+    overflow: auto;
+}
+
 .character-name {}
 
 .pile {
@@ -159,6 +163,7 @@ $button-size: 125px;
     bottom: 0px;
     padding: 10px;
     font-family: 'Pirata One';
+    z-index: 1000;
 
     .attack {
         margin-left: 10px;
