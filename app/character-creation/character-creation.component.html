@@ -1,0 +1,19 @@
+<div class="outer" [style.height.px]="windowHeight">
+    <div class="container">
+        <div class="form">
+            <div class="row">
+                <input type="text" id="name" placeholder="Character Name..." [formControl]="name">
+                <!-- <label for="name">Character Name</label> -->
+            </div>
+            <div class="row">
+                <input type="text" id="name" placeholder="Class Name..." [formControl]="class">
+            </div>
+            <div class="row">
+                <div class="dashed-button" (click)="createCharacter()">
+                    <a>Create Character</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
