@@ -3,7 +3,7 @@ import { Attack } from './attack';
 export class AttackModifierCard {
     id: string;
     name: string;
-    imageUrl: string;
+    centerImageUrl: string;
     adder: number;
     multiplier: number;
     chained: boolean;
@@ -46,6 +46,7 @@ export class AttackModifierCard {
         this.pierce = 0;
         this.push = 0;
         this.pull = 0;
+        this.centerImageUrl = 'url(assets/images/cards/zero.png)';
     }
 
     public modifyAttack(attack: Attack) {
@@ -81,7 +82,7 @@ export class AttackModifierCard {
         newCard.name = this.name;
         newCard.adder = this.adder;
         newCard.multiplier = this.multiplier;
-        newCard.imageUrl = this.imageUrl;
+        newCard.centerImageUrl = this.centerImageUrl;
         newCard.chained = this.chained;
         newCard.shuffler = this.shuffler;
         newCard.multiplier = this.multiplier;

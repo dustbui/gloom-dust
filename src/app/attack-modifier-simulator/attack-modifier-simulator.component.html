@@ -78,14 +78,16 @@
 
 <div *ngIf="numpadEnabled" class="numpad">
     <div class="row">
+        <div class="col-3" (click)="numpadEnabled = false"><i class="material-icons" >close</i></div>
         <div class="col-3" (click)="bless()"><div class="gh-icon bless" ></div><sub>{{deck.blessCount}}</sub></div>
         <div class="col-3" (click)="curse()"><div class="gh-icon curse" ></div><sub>{{deck.curseCount}}</sub></div>
+        <div class="col-3 base-damage">{{baseDamage.value}}</div>
     </div>
     <div class="row">
         <div class="col-3" (click)="clickNum(1)">1</div>
         <div class="col-3" (click)="clickNum(2)">2</div>
         <div class="col-3" (click)="clickNum(3)">3</div>
-        <div class="col-3 base-damage">{{baseDamage.value}}</div>
+    
     </div>
     <div class="row">
         <div class="col-3" (click)="clickNum(4)">4</div>

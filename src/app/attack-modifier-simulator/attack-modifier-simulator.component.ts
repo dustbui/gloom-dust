@@ -6,7 +6,7 @@ import { Attack } from '../_global/models/attack';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Attacks } from '../_global/models/attacks';
 import { trigger, transition, animate, style } from '@angular/animations';
-import { AttackModifierCard } from '../_global/models/attackModifierCard';
+import { Bless, Curse } from '../_global/data/attackModifierCards';
 
 @Component({
     selector: 'app-attack-modifier-simulator',
@@ -131,22 +131,16 @@ export class AttackModifierSimulatorComponent implements OnInit {
     }
 
     public curse() {
-        const curseCard = new AttackModifierCard();
-        curseCard.multiplier = 0;
-        curseCard.consumed = true;
-        curseCard.name = "Curse";
+        var curseCard = Curse.clone();
         this.deck.curseCount++;
-        this.deck.cards.push(curseCard.clone());
+        this.deck.cards.push(curseCard);
         this.deck.shuffle();
     }
 
     public bless() {
-        const blessCard = new AttackModifierCard();
-        blessCard.multiplier = 2;
-        blessCard.consumed = true;
-        blessCard.name = "Blessing";
+        var blessCard = Bless.clone();
         this.deck.blessCount++;
-        this.deck.cards.push(blessCard.clone());
+        this.deck.cards.push(blessCard);
         this.deck.shuffle();
     }
 }
