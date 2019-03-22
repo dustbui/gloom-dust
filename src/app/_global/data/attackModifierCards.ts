@@ -169,6 +169,6 @@ export const allCards = [
     rollingLight, rollingDarkness, rollingDisarm, rollingImmobilize,
     rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
     rollingPierce3, rollingStrengthen, push1Plus1, pull1Plus1,
-    plus2Fire, plus2Muddle, rollingPlus1
+    plus2Fire, plus2Ice, plus2Muddle, rollingPlus1
 ];
 

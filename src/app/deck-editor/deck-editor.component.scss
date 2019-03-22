@@ -1,5 +1,10 @@
 @import "../../assets/colors";
 @import "../../assets/icons";
+@import "../../assets/cards";
+
+.container {
+    overflow: auto;
+}
 
 .actions {
     margin: 10px;
@@ -11,38 +16,7 @@
 .card {
     width: 200px;
     height: 135px;
-    background-color: $dark;
-    background: url("../../assets/images/cards/cardback.jpg") no-repeat;
-    background-size: contain;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    font-size: 20px;
-    .card-value {
-        top: 5px;
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background: no-repeat;
-        background-size: contain;
-    }
- 
-    .rolling {
-        width: 35px;
-        height: 35px;
-        background-size: contain;
-        position: absolute;
-        right: -5px;
-    }
-
-    .effect-icon {
-        width: 35px;
-        height: 35px;
-        background-size: contain;
-        position: absolute;
-        left: 30px;
-    }
+    margin-top: 10px;
 }
 
 .card-actions {
@@ -62,14 +36,14 @@
         width: 50px;
         height: 50px;
         border-radius: 100%;
-      
+
         &.subtract {
             background-color: $red;
             background: url("../../assets/images/cards/minus1.png") no-repeat;
             background-size: 100px;
             background-position-x: 50%;
             background-position-y: 50%;
-    
+
         }
 
         &.add {
@@ -78,7 +52,7 @@
             background-size: 100px;
             background-position-x: 50%;
             background-position-y: 50%;
-    
+
         }
     }
 
