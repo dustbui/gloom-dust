@@ -173,7 +173,7 @@ export const allCards = [
 ];
 
 export function retrieveCard(name: string) {
-    return this.allCards.find((c) => {
+    return allCards.find((c) => {
         return name == c.name;
     }).clone();
 }
