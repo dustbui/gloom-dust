@@ -1,23 +1,20 @@
 <div class="outer" [style.height.px]="windowHeight" [style.width.px]="windowWidth">
+
+    <div class="top-bar">
+        <span class="character-name">{{character.name}}</span>
+        <span class="pull-right align-right">
+            <div>Round {{roundCounter}}</div>
+            <div>Deck: {{deck.cards.length}} / {{deck.cards.length + deck.discard.length}}</div>
+            <div *ngIf="deck.requiresShuffle">*Shuffle*</div>
+        </span>
+    </div>
+
     <div class="container" [style.max-height.px]="windowHeight">
-        <div class="top-bar">
-            <span class="character-name">{{character.name}}</span>
-            <span class="pull-right align-right">
-                <div>Round {{roundCounter}}</div>
-                <div>Deck: {{deck.cards.length}} / {{deck.cards.length + deck.discard.length}}</div>
-                <div *ngIf="deck.requiresShuffle">*Shuffle*</div>
-            </span>
-        </div>
-
-
-
         <div class="drawn-cards" *ngIf="deck.animationQueue.length" [@slideUp]="deck.animationQueue.length">
             <div class="drawn-card" *ngFor="let card of deck.animationQueue">
                 <app-card [card]="card" [width]="windowWidth * 0.5"></app-card>
             </div>
         </div>
-
- 
 
         <div class="row card-history" *ngIf="cardHistoryVisible">
             <div class="history-card shadow-3" *ngFor="let card of deck.discard.slice().reverse()">
@@ -54,7 +51,7 @@
         </div>
     </div>
 
-    
+
     <div class="attack-footer">
         <div class="attack shadow-3" title="Attack" (click)="numpadEnabled = !numpadEnabled"></div>
         <div class="end-round shadow-3" title="End Round" (click)="proceedToNextRound()"></div>

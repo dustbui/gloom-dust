@@ -13,9 +13,9 @@
     font-style: normal;
     font-weight: 400;
     src: url(assets/fonts/material-icons.woff2) format('woff2');
-  }
-  
-  .material-icons {
+}
+
+.material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
@@ -29,7 +29,7 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
-  }
+}
 
 $red: #e74c3c;
 $orange: #e67e22;
@@ -72,6 +72,7 @@ body {
 }
 
 .outer {
+    padding-top: 40px;
     height: 100%;
     background: rgba(84, 10, 0, 1);
     background-image: url("../src/assets/images/wood-pattern.png");
@@ -113,3 +114,26 @@ input::placeholder {
     }
 }
 
+::-webkit-scrollbar {
+    background-color: transparent;
+    opacity: 0.5;
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+    /* background: var(--base-bg-light2); */
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $yellow;
+    border-radius: 3px;
+}

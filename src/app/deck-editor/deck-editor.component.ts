@@ -4,6 +4,7 @@ import { Character } from '../_global/models/character';
 import { AttackModifierDeck } from '../_global/models/attackModifierDeck';
 import { AttackModifierCard } from '../_global/models/attackModifierCard';
 import { allCards } from '../_global/data/attackModifierCards';
+import { Constants } from '../_global/constants';
 
 @Component({
     selector: 'app-deck-editor',
@@ -14,6 +15,7 @@ export class DeckEditorComponent implements OnInit {
     public character: Character = new Character();
     public deck: AttackModifierDeck;
     public windowHeight: number;
+    public containerHeight: number;
     public allCards: AttackModifierCard[];
 
     @HostListener('window:resize', ['$event'])
@@ -66,6 +68,7 @@ export class DeckEditorComponent implements OnInit {
 
     private adjustHeights() {
         this.windowHeight = window.innerHeight;
+        this.containerHeight = this.windowHeight - Constants.TOP_BAR_HEIGHT;
     }
 
     private commitDeck() {

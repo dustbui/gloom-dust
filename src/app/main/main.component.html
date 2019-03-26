@@ -1,5 +1,5 @@
 <div class="outer" [style.height.px]="windowHeight">
-    <div class="container" [style.max-height.px]="windowHeight">
+    <div class="container" [style.max-height.px]="containerHeight">
         <div class="row" *ngFor="let character of characters">
             <app-tile [character]="character"></app-tile>
         </div>

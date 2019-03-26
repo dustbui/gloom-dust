@@ -1,16 +1,34 @@
 .navbar {
     width: 100%;
     height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    z-index: 3000;
     background-color: var(--accent);
+    color: white;
+    font-family: "Pirata One";
+    text-align: center;
+    padding-top: 10px;
+
+    a {
+        position: absolute;
+        color: white;
+        top: 7px;
+        left: 5px;
+    }
+
+    a:visited {
+        color: white;
+    }
 
     .toggle {
-        position: fixed;
+        position: absolute;
         top: 10px;
         left: 0px;
     }
 
-    .title {}
+    .title {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 20px;
+    }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Character } from '../_global/models/character';
 import { Router } from '@angular/router';
+import { Constants } from '../_global/constants';
 
 @Component({
   selector: 'app-main',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class MainComponent implements OnInit {
   public characters: Character[] = [];
   public windowHeight: number;
+  public containerHeight: number;
   public createCharacterActions = [
     { label: 'Get Started', route: 'characterCreation' }
   ];
@@ -41,6 +43,7 @@ export class MainComponent implements OnInit {
 
   private adjustHeights() {
     this.windowHeight = window.innerHeight;
+    this.containerHeight = this.windowHeight - Constants.TOP_BAR_HEIGHT;
   }
 
 }
