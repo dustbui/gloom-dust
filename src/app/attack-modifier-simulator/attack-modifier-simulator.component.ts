@@ -139,7 +139,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
 
     private adjustHeights() {
         this.windowHeight = window.innerHeight;
-        this.windowWidth = window.outerWidth;
+        this.windowWidth = window.innerWidth;
         this.attacksHeight = window.innerHeight - this.footerHeight;
     }
 
