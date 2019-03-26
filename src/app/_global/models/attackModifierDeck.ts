@@ -39,8 +39,14 @@ export class AttackModifierDeck {
     character: Character;
     advantaged: boolean;
     disadvantaged: boolean;
-    curseCount = 0;
-    blessCount = 0;
+
+    get curseCount(): number {
+        return this.count("Curse");
+    }
+
+    get blessCount(): number {
+        return this.count("Bless");
+    }
 
     // Fisher-Yates algorithm shuffle
     public shuffle() {
@@ -163,13 +169,6 @@ export class AttackModifierDeck {
         // card.animate(); // Play animation
         if (!card.consumed) {
             this.discard.push(card); // Put in discard pile
-        } else {
-            if (card.name === "Blessing") {
-                this.blessCount--;
-            } else if (card.name === "Curse") {
-                this.curseCount--;
-            }
-            console.log(`Consuming ${card.name}`);
         }
 
         // Check if card has shuffler flag on it
@@ -216,8 +215,23 @@ export class AttackModifierDeck {
 
     public count(cardName: string) {
         const matches = this.cards.filter(card => {
-            return card.name === cardName;
+            if (!card) return;
+            return card.name.toLowerCase() == cardName.toLowerCase();
         });
         return matches.length;
+    }
+
+    public calculateChances() {
+        let results = {};
+
+        const total = this.cards.length;
+        this.cards.forEach(card => {
+            const count = this.count(card.name);
+            results[card.name] = count / total;
+        });
+
+        console.log("Chances calculated: ", results);
+
+        return results;
     }
 }

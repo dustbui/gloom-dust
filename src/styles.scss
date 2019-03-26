@@ -72,7 +72,7 @@ body {
 }
 
 .outer {
-    padding-top: 40px;
+    padding-top: 45px;
     height: 100%;
     background: rgba(84, 10, 0, 1);
     background-image: url("../src/assets/images/wood-pattern.png");
@@ -136,4 +136,32 @@ input::placeholder {
 ::-webkit-scrollbar-thumb {
     background-color: $yellow;
     border-radius: 3px;
+}
+
+// Scaled font
+@media all and (min-width: 50px) {
+    .scaled-font {
+        font-size: 1.1em;
+    }
+}
+
+@media all and (min-width: 600px) {
+    .scaled-font {
+        line-height: 1.3em;
+        font-size: 1.5em;
+    }
+}
+
+.tab-active {
+    border-bottom: 3px solid $orange;
+}
+
+.panel-options {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    div {
+        cursor: pointer;
+    }
 }

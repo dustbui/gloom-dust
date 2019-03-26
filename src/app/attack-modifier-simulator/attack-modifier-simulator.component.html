@@ -1,6 +1,6 @@
 <div class="outer" [style.height.px]="windowHeight" [style.width.px]="windowWidth">
 
-    <div class="top-bar">
+    <div class="top-bar scaled-font">
         <span class="character-name">{{character.name}}</span>
         <span class="pull-right align-right">
             <div>Round {{roundCounter}}</div>
@@ -9,10 +9,16 @@
         </span>
     </div>
 
+    <div class="side-bar">
+        <div class="side-bar-action" (click)="showAnalytics = true; calculateChances()" title="Show Analytics">
+            <i class="material-icons">assessment</i>
+        </div>
+    </div>
+
     <div class="container" [style.max-height.px]="windowHeight">
         <div class="drawn-cards" *ngIf="deck.animationQueue.length" [@slideUp]="deck.animationQueue.length">
             <div class="drawn-card" *ngFor="let card of deck.animationQueue">
-                <app-card [card]="card" [width]="windowWidth * 0.5"></app-card>
+                <app-card [card]="card" [width]="getCardWidth()"></app-card>
             </div>
         </div>
 
@@ -24,10 +30,8 @@
     </div>
 
     <div class="attack-container">
-        <div class="attack" *ngIf="attack">
+        <div class="attack" *ngIf="attack" [@slideFromRight]>
             <span class="attack-value">
-                <!-- <i *ngIf="attack.disadvantaged" class="ra ra-uncertainty"></i>
-                <i *ngIf="attack.advantaged" class="ra ra-muscle-up"></i> -->
                 <i class="ra ra-sword"></i>
                 <span *ngIf="!attack.committed">{{baseDamage.value}}</span>
                 <span *ngIf="attack.committed">{{attack.value}}</span>
@@ -59,9 +63,9 @@
 
 </div>
 
-<div *ngIf="numpadEnabled" class="numpad">
+<div *ngIf="numpadEnabled" class="numpad" [@slideUpAndBackOut]>
     <div class="row">
-        <div class="col-3" (click)="numpadEnabled = false"><i class="material-icons">close</i></div>
+        <div class="col-3" (click)="numpadEnabled = false"><i class="material-icons close">close</i></div>
         <div class="col-3" (click)="bless()">
             <div class="gh-icon bless"></div><sub>{{deck.blessCount}}</sub>
         </div>
@@ -97,7 +101,40 @@
         <div class="col-3" (click)="clickNum(0)">0</div>
         <div class="col-3" (click)="clickBackspace()"><i class="material-icons">backspace</i></div>
         <div class="col-3" (click)="createNewAttack()">
-            <i class="material-icons">check</i>
+            <i class="material-icons check">check</i>
+        </div>
+    </div>
+</div>
+
+<div class="analytics" *ngIf="showAnalytics">
+    <div class="pull-right panel-options">
+        <i class="material-icons close" (click)="showAnalytics = false">close</i>
+    </div>
+
+    <div class="tabstrip">
+        <span [ngClass]="{'tab-active': historyTabActive}"
+            (click)="historyTabActive = true; chancesTabActive = false">History</span>
+        <span [ngClass]="{'tab-active': chancesTabActive}"
+            (click)="historyTabActive = false; chancesTabActive = true">Chances</span>
+    </div>
+
+    <div class="card-history" *ngIf="historyTabActive">
+        <div class="container">
+            <div class="row" *ngFor="let card of deck.discard.slice().reverse()">
+                <app-card [card]="card" [width]="200"></app-card>
+            </div>
+        </div>
+    </div>
+    <div class="card-chances" *ngIf="chancesTabActive">
+        <div class="container">
+            <div class="row card-chance" *ngFor="let o of cardChances">
+                <div class="col-6">
+                    <app-card [card]="o.card" [width]="200"></app-card>
+                </div>
+                <div class="col-6">
+                    <span class="chance-value">{{o.chance}}%</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>

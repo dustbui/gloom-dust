@@ -7,6 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Attacks } from '../_global/models/attacks';
 import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
 import { Bless, Curse } from '../_global/data/attackModifierCards';
+import * as Cards from '../_global/data/attackModifierCards';
 
 @Component({
     selector: 'app-attack-modifier-simulator',
@@ -25,6 +26,28 @@ import { Bless, Curse } from '../_global/data/attackModifierCards';
             transition(':leave', [
                 animate('0.33s ease-out', style({ transform: 'translateY(-100%)' }))
             ])
+        ]),
+        trigger('slideUpAndBackOut', [
+            transition(':enter', [
+                style({ transform: 'translateY(100%)' }),
+                animate('0.2s ease-out', style({ transform: 'translateY(0%)' }))
+            ]),
+            transition(':leave', [
+                animate('0.2s ease-out', style({ transform: 'translateY(100%)' }))
+            ])
+        ]),
+        trigger('slideFromRight', [
+            transition(':enter', [
+                query('.gh-icon', [
+                    style({ transform: 'translateX(1000%)', opacity: 0 }),
+                    stagger('500ms', [
+                        animate('0.25s 1s ease-out', style({ transform: 'translateX(0%)', opacity: 1 }))
+                    ])
+                ])
+            ]),
+            transition(':leave', [
+                animate('0.25s ease-out', style({ opacity: '0' }))
+            ])
         ])
     ]
 })
@@ -41,6 +64,8 @@ export class AttackModifierSimulatorComponent implements OnInit {
     public attacks: Attacks;
     public cardHistoryVisible = false;
     public numpadEnabled = false;
+    public historyTabActive = true;
+    public cardChances = [];
     baseDamage = new FormControl('');
 
     @HostListener('window:resize', ['$event'])
@@ -69,6 +94,14 @@ export class AttackModifierSimulatorComponent implements OnInit {
             this.attacks = new Attacks();
             this.attacks.reset(this.baseDamage.value);
         });
+    }
+
+    public getCardWidth() {
+        if (this.windowWidth > 600) {
+            return 300;
+        } else {
+            return this.windowWidth * 0.5;
+        }
     }
 
     public baseDamageOnChange() {
@@ -144,16 +177,31 @@ export class AttackModifierSimulatorComponent implements OnInit {
     }
 
     public curse() {
-        var curseCard = Curse.clone();
-        this.deck.curseCount++;
+        const curseCard = Curse.clone();
         this.deck.cards.push(curseCard);
         this.deck.shuffle();
     }
 
     public bless() {
-        var blessCard = Bless.clone();
-        this.deck.blessCount++;
+        const blessCard = Bless.clone();
         this.deck.cards.push(blessCard);
         this.deck.shuffle();
+    }
+
+    public calculateChances() {
+        const results = this.deck.calculateChances();
+        this.cardChances = [];
+
+        for (let property in results) {
+            if (results.hasOwnProperty(property)) {
+                const card = Cards.retrieveCard(property);
+                const chance = (results[property] * 100).toFixed(2);
+                this.cardChances.push({ card: card, chance: chance });
+                this.cardChances.sort((a, b) => {
+                    return b.chance - a.chance;
+                })
+            }
+        }
+
     }
 }

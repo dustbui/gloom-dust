@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public ngOnInit() {
     this.setTheme('Default');
     this.elem = document.documentElement;
-    this.requestFullscreen();
+    // this.requestFullscreen();
   }
 
   public setTheme(themeName: string) {
