@@ -66,6 +66,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
     public numpadEnabled = false;
     public historyTabActive = true;
     public cardChances = [];
+    public showAnalytics = false;
     baseDamage = new FormControl('');
 
     @HostListener('window:resize', ['$event'])
