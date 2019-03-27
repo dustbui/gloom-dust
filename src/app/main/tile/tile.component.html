@@ -1,5 +1,6 @@
 <div class="col-12">
     <div *ngIf="character" class="character-card">
+        <div class="remove-character" (click)="promptRemove(character.name)"><i class="material-icons">close</i></div>
         <div class="character-portrait" [style.backgroundImage]="'url(' + character.class.thumbnailUrl + ')'"></div>
         <span class="character-details">
             <div class="character-name">{{character.name}}</div>

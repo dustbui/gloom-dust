@@ -1,7 +1,7 @@
 <div class="outer" [style.height.px]="windowHeight">
     <div class="container" [style.max-height.px]="containerHeight">
         <div class="row" *ngFor="let character of characters">
-            <app-tile [character]="character"></app-tile>
+            <app-tile [character]="character" (removedCharacter)="onCharacterRemove($event)"></app-tile>
         </div>
         <div class="row">
             <div class="dashed-button">
