@@ -3,6 +3,7 @@ import { Attack } from './attack';
 export class AttackModifierCard {
     id: string;
     name: string;
+    defaultAmount: number;
     centerImageUrl: string;
     adder: number;
     multiplier: number;
@@ -47,6 +48,7 @@ export class AttackModifierCard {
         this.push = 0;
         this.pull = 0;
         this.centerImageUrl = 'url(assets/images/cards/zero.png)';
+        this.defaultAmount = 0;
     }
 
     public modifyAttack(attack: Attack) {

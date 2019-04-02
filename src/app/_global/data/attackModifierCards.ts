@@ -16,38 +16,45 @@ Curse.centerImageUrl = 'url(assets/images/cards/curse.png)';
 export const Plus1 = new AttackModifierCard();
 Plus1.name = '+1';
 Plus1.adder = 1;
+Plus1.defaultAmount = 5;
 Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
 export const Plus2 = new AttackModifierCard();
 Plus2.name = '+2';
 Plus2.adder = 2;
+Plus2.defaultAmount = 1;
 Plus2.centerImageUrl = 'url(assets/images/cards/plus2.png)';
 
 export const Zero = new AttackModifierCard();
 Zero.name = '0';
 Zero.adder = 0;
+Zero.defaultAmount = 6;
 Zero.centerImageUrl = 'url(assets/images/cards/zero.png)';
 
 export const Minus1 = new AttackModifierCard();
 Minus1.name = '-1';
 Minus1.adder = -1;
+Minus1.defaultAmount = 5;
 Minus1.centerImageUrl = 'url(assets/images/cards/minus1.png)';
 
 export const Minus2 = new AttackModifierCard();
 Minus2.name = '-2';
 Minus2.adder = -2;
+Minus2.defaultAmount = 1;
 Minus2.centerImageUrl = 'url(assets/images/cards/minus2.png)';
 
 export const Null = new AttackModifierCard();
 Null.name = 'NULL';
 Null.shuffler = true;
 Null.multiplier = 0;
+Null.defaultAmount = 1;
 Null.centerImageUrl = 'url(assets/images/cards/null.png)';
 
 export const x2 = new AttackModifierCard();
 x2.name = 'x2';
 x2.multiplier = 2;
 x2.shuffler = true;
+x2.defaultAmount = 1;
 x2.centerImageUrl = 'url(assets/images/cards/crit.png)';
 
 export const rollingNature = new AttackModifierCard();
@@ -164,12 +171,12 @@ rollingPlus1.chained = true;
 rollingPlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
 export const allCards = [
-    Bless, Curse, Plus1, Plus2, Zero, Minus1, Minus2, x2, Null,
+    Plus1, Plus2, Zero, Minus1, Minus2, x2, Null,
     rollingFire, rollingIce, rollingNature, rollingWind,
     rollingLight, rollingDarkness, rollingDisarm, rollingImmobilize,
     rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
     rollingPierce3, rollingStrengthen, push1Plus1, pull1Plus1,
-    plus2Fire, plus2Ice, plus2Muddle, rollingPlus1
+    plus2Fire, plus2Ice, plus2Muddle, rollingPlus1, Bless, Curse
 ];
 
 export function retrieveCard(name: string) {

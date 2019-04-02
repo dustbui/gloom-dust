@@ -11,7 +11,7 @@
             <div class="col-6">
                 <div class="card-actions">
                     <div class="card-name">
-                        {{card.name}}
+                        {{card.name}} <i *ngIf="card.defaultAmount">({{card.defaultAmount}})</i>
                     </div>
                     <div class="card-action subtract shadow-3" (click)="removeCard(card.name)"></div>
 
