@@ -226,6 +226,23 @@ rollingPlus1.adder = 1;
 rollingPlus1.chained = true;
 rollingPlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
+
+export const defaultCards = [
+    Plus1, Plus2, Zero, Minus1, 
+    Minus2, x2, Null,
+]
+
+export const scenarioCards = [Curse, Bless]
+
+export const perkCards = [
+    rollingFire, rollingIce, rollingNature, rollingWind,
+    rollingLight, rollingDarkness, rollingDisarm, rollingImmobilize,
+    rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
+    rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush2,
+    addTargetPlus0, stunPlus0, push1Plus1, pull1Plus1, immobilizePlus1, 
+    cursePlus1, woundPlus1, healSelf1Plus1, healSelf2Plus1, shield1Plus1, 
+    plus2Fire, plus2Ice, plus2Muddle, rollingPlus1, Plus3
+]
 export const allCards = [
     Plus1, Plus2, Plus3, Zero, Minus1, Minus2, x2, Null,
     rollingFire, rollingIce, rollingNature, rollingWind,

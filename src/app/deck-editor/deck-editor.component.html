@@ -3,7 +3,7 @@
         <div class="row">
             <div class="actions" (click)="setDefaults()">Set Defaults</div>
         </div>
-        <div class="row" *ngFor="let card of allCards">
+        <div class="row" *ngFor="let card of classCards">
             <div class="col-6">
                 <app-card [card]="card" [width]="200"></app-card>
             </div>

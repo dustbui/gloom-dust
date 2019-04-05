@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Character } from '../_global/models/character';
 import { AttackModifierDeck } from '../_global/models/attackModifierDeck';
 import { AttackModifierCard } from '../_global/models/attackModifierCard';
-import { allCards } from '../_global/data/attackModifierCards';
+import { allCards, perkCards, defaultCards, scenarioCards } from '../_global/data/attackModifierCards';
 import { Constants } from '../_global/constants';
 
 @Component({
@@ -17,6 +17,8 @@ export class DeckEditorComponent implements OnInit {
     public windowHeight: number;
     public containerHeight: number;
     public allCards: AttackModifierCard[];
+    public classCards: AttackModifierCard[];
+    private defaultCards: AttackModifierCard[];
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
@@ -37,8 +39,8 @@ export class DeckEditorComponent implements OnInit {
             this.deck.cards = this.character.attackModifierDeck.cards;
             this.deck.shuffle();
             this.adjustHeights();
-            this.allCards = [];
-            this.allCards = allCards.slice(); // Copy all cards deck
+            this.allCards = allCards;
+            this.classCards = [ ...defaultCards, ...this.character.class.perks, ...scenarioCards]
         });
     }
 

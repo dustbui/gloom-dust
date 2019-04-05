@@ -1,4 +1,5 @@
 import { CharacterClass } from '../models/CharacterClass';
+import { plus2Fire, plus2Ice, cursePlus1, woundPlus1, stunPlus0, immobilizePlus1, rollingNature, rollingWind, rollingLight, rollingDarkness } from './attackModifierCards';
 
 export const Brute = new CharacterClass();
 Brute.name = 'Brute';
@@ -11,6 +12,8 @@ Scoundrel.handSize = 9;
 Scoundrel.thumbnailUrl = '../../assets/images/portraits/scoundrel.png';
 
 export const Spellweaver = new CharacterClass();
+Spellweaver.perks = [plus2Fire, plus2Ice, cursePlus1, woundPlus1, stunPlus0, immobilizePlus1, 
+                    rollingNature, rollingWind, rollingLight, rollingDarkness]
 Spellweaver.name = 'Spellweaver';
 Spellweaver.handSize = 8;
 Spellweaver.thumbnailUrl = '../../assets/images/portraits/spellweaver.png';
