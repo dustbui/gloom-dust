@@ -10,12 +10,23 @@
   <div *ngIf="card.bless" class="effect-icon bless"></div>
   <div *ngIf="card.curse" class="effect-icon curse"></div>
   <div *ngIf="card.invisible" class="effect-icon invis"></div>
-  <div *ngIf="card.pierce" class="effect-icon pierce"></div>
-  <div *ngIf="card.push" class="effect-icon push"></div>
-  <div *ngIf="card.pull" class="effect-icon pull"></div>
+  <div *ngIf="card.pierce" class="effect-icon pierce">
+    <div class='effect-text'>{{card.pierce}}</div>
+  </div>
+  <div *ngIf="card.push" class="effect-icon push">
+    <div class='effect-text'>{{card.push}}</div>
+  </div>
+  <div *ngIf="card.pull" class="effect-icon pull">
+      <div class='effect-text'>{{card.pull}}</div>
+  </div>
   <div *ngIf="card.disarm" class="effect-icon disarm"></div>
   <div *ngIf='card.targets' class='effect-icon target'></div>
-  <div *ngIf='card.shield' class='effect-icon shield'></div>
+  <div *ngIf='card.shield' class='effect-icon shield'>
+      <div class='effect-text'>{{card.shield}}</div>
+  </div>
+  <div *ngIf='card.heal || card.healSelf' class='effect-icon heal'>
+      <div class='effect-text'>{{card.heal || card.healSelf}}</div>
+  </div> 
 
   <div *ngIf="card.fire" class="effect-icon fire"></div>
   <div *ngIf="card.ice" class="effect-icon ice"></div>

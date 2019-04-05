@@ -35,4 +35,18 @@
         top: 37%;
         left: 5%;
     }
+
+    .pierce, .pull, .push, .heal, .shield {
+        height: 20%;
+        width: 22%;
+        left: 3%
+    }
+
+    .effect-text {
+        -webkit-text-stroke: .75px black;
+        font-size: 38px;
+        font-family: "Pirata One";
+        float: right;
+        margin-top: 7%;
+    }
 }
