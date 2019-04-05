@@ -34,6 +34,7 @@ export class Attack {
     push: number;
     curse: number;
     bless: number;
+    targets: number;
 
     // Elements
     fire: boolean;

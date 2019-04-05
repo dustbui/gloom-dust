@@ -1,5 +1,4 @@
 import { AttackModifierCard } from '../models/attackModifierCard';
-import { Attack } from '../models/attack';
 
 export const Bless = new AttackModifierCard();
 Bless.name = 'bless';
@@ -24,6 +23,11 @@ Plus2.name = '+2';
 Plus2.adder = 2;
 Plus2.defaultAmount = 1;
 Plus2.centerImageUrl = 'url(assets/images/cards/plus2.png)';
+
+export const Plus3 = new AttackModifierCard();
+Plus3.name = '+3';
+Plus3.adder = 3;
+Plus3.centerImageUrl = 'url(assets/images/cards/plus3.png)'
 
 export const Zero = new AttackModifierCard();
 Zero.name = '0';
@@ -81,13 +85,11 @@ export const rollingLight = new AttackModifierCard();
 rollingLight.name = 'rollingLight';
 rollingLight.chained = true;
 rollingLight.light = true;
-rollingLight.centerImageUrl = 'url(assets/images/cards/zero.png)';
 
 export const rollingDarkness = new AttackModifierCard();
 rollingDarkness.name = 'rollingDarkness';
 rollingDarkness.chained = true;
 rollingDarkness.darkness = true;
-rollingDarkness.centerImageUrl = 'url(assets/images/cards/zero.png)';
 
 export const rollingMuddle = new AttackModifierCard();
 rollingMuddle.name = 'rollingMuddle';
@@ -134,6 +136,16 @@ rollingPierce3.name = 'rollingPierce3';
 rollingPierce3.chained = true;
 rollingPierce3.pierce = 3;
 
+export const rollingAddTarget = new AttackModifierCard();
+rollingAddTarget.name = 'rollingAddTarget';
+rollingAddTarget.chained = true;
+rollingAddTarget.targets = 1;
+
+export const rollingPush2 = new AttackModifierCard();
+rollingPush2.name = 'rollingPush2';
+rollingPush2.push = 2;
+rollingPush2.chained = true;
+
 export const push1Plus1 = new AttackModifierCard();
 push1Plus1.name = 'push1Plus1';
 push1Plus1.push = 1;
@@ -145,6 +157,30 @@ pull1Plus1.name = 'pull1Plus1';
 pull1Plus1.pull = 1;
 pull1Plus1.adder = 1;
 pull1Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
+
+export const woundPlus1 = new AttackModifierCard();
+woundPlus1.name = 'wound1Plus1';
+woundPlus1.wound = true;
+woundPlus1.adder = 1;
+woundPlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
+
+export const cursePlus1 = new AttackModifierCard();
+cursePlus1.name = 'curse1Plus1';
+cursePlus1.curse = 1;
+cursePlus1.adder = 1;
+cursePlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
+
+export const immobilizePlus1 = new AttackModifierCard();
+immobilizePlus1.name = 'immobilizePlus1';
+immobilizePlus1.immobilize = true;
+immobilizePlus1.adder = 1;
+immobilizePlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)'
+
+export const shield1Plus1 = new AttackModifierCard();
+shield1Plus1.name = 'shield1Plus1';
+shield1Plus1.shield = 1;
+shield1Plus1.adder = 1;
+shield1Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
 export const plus2Fire = new AttackModifierCard();
 plus2Fire.name = 'plus2Fire';
@@ -171,12 +207,13 @@ rollingPlus1.chained = true;
 rollingPlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
 export const allCards = [
-    Plus1, Plus2, Zero, Minus1, Minus2, x2, Null,
+    Plus1, Plus2, Plus3, Zero, Minus1, Minus2, x2, Null,
     rollingFire, rollingIce, rollingNature, rollingWind,
     rollingLight, rollingDarkness, rollingDisarm, rollingImmobilize,
     rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
-    rollingPierce3, rollingStrengthen, push1Plus1, pull1Plus1,
-    plus2Fire, plus2Ice, plus2Muddle, rollingPlus1, Bless, Curse
+    rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush2, 
+    push1Plus1, pull1Plus1, immobilizePlus1, cursePlus1, woundPlus1, 
+    shield1Plus1, plus2Fire, plus2Ice, plus2Muddle, rollingPlus1, Bless, Curse
 ];
 
 export function retrieveCard(name: string) {

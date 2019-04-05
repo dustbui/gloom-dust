@@ -29,6 +29,7 @@ export class AttackModifierCard {
     retaliate: number;
     curse: number;
     bless: number;
+    targets: number;
 
     // Elements
     fire: boolean;
@@ -47,6 +48,8 @@ export class AttackModifierCard {
         this.pierce = 0;
         this.push = 0;
         this.pull = 0;
+        this.targets = 0;
+        this.shield = 0;
         this.centerImageUrl = 'url(assets/images/cards/zero.png)';
         this.defaultAmount = 0;
     }
@@ -76,6 +79,8 @@ export class AttackModifierCard {
         attack.pull = attack.pull || this.pull;
         attack.invisible = attack.invisible || this.invisible;
         attack.immobilize = attack.immobilize || this.immobilize;
+        attack.shield = attack.shield || this.shield;
+        attack.targets = attack.targets || this.targets;
     }
 
     public clone() {
@@ -107,6 +112,8 @@ export class AttackModifierCard {
         newCard.muddle = this.muddle;
         newCard.invisible = this.invisible;
         newCard.immobilize = this.immobilize;
+        newCard.shield = this.shield;
+        newCard.targets = this.targets;
 
         // Elements
         newCard.fire = this.fire;
