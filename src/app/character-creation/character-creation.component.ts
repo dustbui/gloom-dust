@@ -4,6 +4,7 @@ import { Character } from '../_global/models/character';
 import { Router } from '@angular/router';
 import { CharacterClass } from '../_global/models/CharacterClass';
 import { CharacterClasses } from '../_global/data/classes';
+import { Constants } from '../_global/constants';
 
 @Component({
     selector: 'app-character-creation',
@@ -12,8 +13,11 @@ import { CharacterClasses } from '../_global/data/classes';
 })
 export class CharacterCreationComponent implements OnInit {
     name = new FormControl('');
-    class = new FormControl('');
+    public class: string;
+    public allClasses = [];
     public windowHeight: number;
+    public windowWidth: number;
+    public containerHeight: number;
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
@@ -24,12 +28,14 @@ export class CharacterCreationComponent implements OnInit {
 
     ngOnInit() {
         this.adjustHeights();
+
+        this.allClasses = Object.values(CharacterClasses);
     }
 
     public createCharacter() {
         const newCharacter = new Character();
         newCharacter.name = this.name.value;
-        const characterClass = CharacterClasses[this.class.value.toLowerCase()] || new CharacterClass();
+        const characterClass = CharacterClasses[this.class.toLowerCase()] || new CharacterClass();
         newCharacter.class = characterClass;
         const jsonCharacterString = JSON.stringify(newCharacter);
         localStorage.setItem(`char:${this.name.value}`, jsonCharacterString);
@@ -50,5 +56,7 @@ export class CharacterCreationComponent implements OnInit {
 
     private adjustHeights() {
         this.windowHeight = window.innerHeight;
+        this.windowWidth = window.innerWidth;
+        this.containerHeight = this.windowHeight - Constants.TOP_BAR_HEIGHT;
     }
 }

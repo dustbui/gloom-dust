@@ -1,12 +1,16 @@
-<div class="outer" [style.height.px]="windowHeight">
-    <div class="container">
+<div class="outer" [style.height.px]="windowHeight" [style.width.px]="windowWidth">
+    <div class="container" [style.height.px]="windowHeight">
         <div class="form">
             <div class="row">
                 <input type="text" id="name" placeholder="Character Name..." [formControl]="name">
                 <!-- <label for="name">Character Name</label> -->
             </div>
-            <div class="row">
-                <input type="text" id="name" placeholder="Class Name..." [formControl]="class">
+            <div class="row character-portraits">
+                <div class="col-4 col-md-6" *ngFor="let c of allClasses">
+                    <div class="character-portrait" 
+                        (click)="class = c.name"
+                        [style.backgroundImage]="'url(' + c.thumbnailUrl + ')'"></div>
+                </div>
             </div>
             <div class="row">
                 <div class="dashed-button" (click)="createCharacter()">
