@@ -141,10 +141,30 @@ rollingAddTarget.name = 'Rolling Add Target';
 rollingAddTarget.chained = true;
 rollingAddTarget.targets = 1;
 
+export const rollingPull1 = new AttackModifierCard();
+rollingPull1.name = 'Rolling Pull One';
+rollingPull1.chained = true;
+rollingPull1.pull = 1;
+
 export const rollingPush2 = new AttackModifierCard();
-rollingPush2.name = 'Rolling Push +2';
+rollingPush2.name = 'Rolling Push Two';
 rollingPush2.push = 2;
 rollingPush2.chained = true;
+
+export const rollingPush1 = new AttackModifierCard();
+rollingPush1.name = 'Rolling Push One';
+rollingPush1.push = 1;
+rollingPush1.chained = true;
+
+export const rollingHealSelf1 = new AttackModifierCard();
+rollingHealSelf1.name = 'Rolling Heal Self One'
+rollingHealSelf1.healSelf = 1;
+rollingHealSelf1.chained = true;
+
+export const rollingShield1 = new AttackModifierCard();
+rollingShield1.name = 'Rolling Sheild Self One';
+rollingShield1.shield = 1;
+rollingShield1.chained = true;
 
 export const addTargetPlus0 = new AttackModifierCard();
 addTargetPlus0.name = 'Add Target';
@@ -190,14 +210,8 @@ shield1Plus1.shield = 1;
 shield1Plus1.adder = 1;
 shield1Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
-export const healSelf1Plus1 = new AttackModifierCard();
-healSelf1Plus1.name = 'Heal Self One +1'
-healSelf1Plus1.healSelf = 1;
-healSelf1Plus1.adder = 1;
-healSelf1Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
-
 export const healSelf2Plus1 = new AttackModifierCard();
-healSelf2Plus1.name = 'Heal Self Two +2'
+healSelf2Plus1.name = 'Heal Self Two +1'
 healSelf2Plus1.healSelf = 2;
 healSelf2Plus1.adder = 1;
 healSelf2Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
@@ -238,20 +252,16 @@ export const perkCards = [
     rollingFire, rollingIce, rollingNature, rollingWind,
     rollingLight, rollingDarkness, rollingDisarm, rollingImmobilize,
     rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
-    rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush2,
-    addTargetPlus0, stunPlus0, push1Plus1, pull1Plus1, immobilizePlus1, 
-    cursePlus1, woundPlus1, healSelf1Plus1, healSelf2Plus1, shield1Plus1, 
-    plus2Fire, plus2Ice, plus2Muddle, rollingPlus1, Plus3
+    rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush1, 
+    rollingPush2, rollingPull1, rollingShield1, addTargetPlus0, stunPlus0,
+    push1Plus1, pull1Plus1, immobilizePlus1, cursePlus1, woundPlus1, 
+    rollingHealSelf1, healSelf2Plus1, shield1Plus1, plus2Fire, plus2Ice, 
+    plus2Muddle, rollingPlus1, Plus3
 ]
 export const allCards = [
-    Plus1, Plus2, Plus3, Zero, Minus1, Minus2, x2, Null,
-    rollingFire, rollingIce, rollingNature, rollingWind,
-    rollingLight, rollingDarkness, rollingDisarm, rollingImmobilize,
-    rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
-    rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush2,
-    addTargetPlus0, stunPlus0, push1Plus1, pull1Plus1, immobilizePlus1, 
-    cursePlus1, woundPlus1, healSelf1Plus1, healSelf2Plus1, shield1Plus1, 
-    plus2Fire, plus2Ice, plus2Muddle, rollingPlus1, Bless, Curse
+    ...defaultCards,
+    ...perkCards,
+    ...scenarioCards
 ];
 
 export function retrieveCard(name: string) {

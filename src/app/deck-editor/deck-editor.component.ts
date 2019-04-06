@@ -18,7 +18,10 @@ export class DeckEditorComponent implements OnInit {
     public containerHeight: number;
     public allCards: AttackModifierCard[];
     public classCards: AttackModifierCard[];
-    private defaultCards: AttackModifierCard[];
+    public cardsToShow: {
+        cards: AttackModifierCard[];
+        nameToSwitchTo: string;
+    }
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
@@ -41,6 +44,10 @@ export class DeckEditorComponent implements OnInit {
             this.adjustHeights();
             this.allCards = allCards;
             this.classCards = [ ...defaultCards, ...this.character.class.perks, ...scenarioCards]
+            this.cardsToShow = {
+                cards: this.classCards,
+                nameToSwitchTo: 'All'
+            }
         });
     }
 
@@ -66,6 +73,20 @@ export class DeckEditorComponent implements OnInit {
     public setDefaults() {
         this.deck = new AttackModifierDeck();
         this.commitDeck();
+    }
+
+    public setDeck() {
+        if(this.cardsToShow.cards.length === this.classCards.length) {
+            this.cardsToShow = {
+                cards: this.allCards,
+                nameToSwitchTo: 'Class'
+            } 
+        } else {
+            this.cardsToShow = {
+                cards: this.classCards,
+                nameToSwitchTo: 'All'
+            }
+        }
     }
 
     private adjustHeights() {
