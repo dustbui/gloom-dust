@@ -36,7 +36,8 @@ Spellweaver.thumbnailUrl = '../../assets/images/portraits/spellweaver.png';
 
 export const Tinkerer = new CharacterClass();
 Tinkerer.perks = [
-    Plus3, rollingFire, rollingMuddle, woundPlus1, immobilizePlus1, healSelf2Plus1, addTargetPlus0
+    Plus3, rollingFire, rollingMuddle, woundPlus1, 
+    immobilizePlus1, healSelf2Plus1, addTargetPlus0
 ]
 Tinkerer.name = 'Tinkerer';
 Tinkerer.handSize = 14;
