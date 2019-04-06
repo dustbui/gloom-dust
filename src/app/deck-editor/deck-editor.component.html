@@ -2,8 +2,9 @@
     <div class="container" [style.max-height.px]="containerHeight">
         <div class="row">
             <div class="actions" (click)="setDefaults()">Set Defaults</div>
+            <div class='actions' (click)="setDeck()">Show {{cardsToShow.nameToSwitchTo}} Cards</div>
         </div>
-        <div class="row" *ngFor="let card of allCards">
+        <div class="row" *ngFor="let card of cardsToShow.cards">
             <div class="col-6">
                 <app-card [card]="card" [width]="200"></app-card>
             </div>

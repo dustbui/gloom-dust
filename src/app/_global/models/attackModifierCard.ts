@@ -25,6 +25,7 @@ export class AttackModifierCard {
     push: number;
     pull: number;
     heal: number;
+    healSelf: number;
     shield: number;
     retaliate: number;
     curse: number;
@@ -50,6 +51,8 @@ export class AttackModifierCard {
         this.pull = 0;
         this.targets = 0;
         this.shield = 0;
+        this.heal = 0;
+        this.healSelf = 0;
         this.centerImageUrl = 'url(assets/images/cards/zero.png)';
         this.defaultAmount = 0;
     }
@@ -81,6 +84,8 @@ export class AttackModifierCard {
         attack.immobilize = attack.immobilize || this.immobilize;
         attack.shield = attack.shield || this.shield;
         attack.targets = attack.targets || this.targets;
+        attack.heal = attack.heal || this.heal;
+        attack.healSelf = attack.healSelf || this.healSelf;
     }
 
     public clone() {
@@ -101,6 +106,7 @@ export class AttackModifierCard {
         newCard.push = this.push;
         newCard.pull = this.pull;
         newCard.heal = this.heal;
+        newCard.healSelf = this.healSelf;
         newCard.curse = this.curse;
         newCard.bless = this.bless;
 
