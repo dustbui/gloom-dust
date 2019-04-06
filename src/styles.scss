@@ -103,14 +103,23 @@ input::placeholder {
     padding: 15px;
     margin: 15px;
 
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
     a {
         font-family: "Pirata One";
         font-size: 32px;
         text-decoration: none;
+        color: white !important;
     }
 
     a:visited {
-        color: white;
+        color: white !important;
     }
 }
 
@@ -164,4 +173,15 @@ input::placeholder {
     div {
         cursor: pointer;
     }
+}
+
+.material-icons {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
 }

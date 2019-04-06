@@ -14,7 +14,7 @@ export class NavComponent implements OnInit {
   }
 
   public showBackNav() {
-    console.log(`Current nav: ${this.router.url}`);
+    // console.log(`Current nav: ${this.router.url}`);
     if (this.router.url === "/#/") {
       return false;
     }

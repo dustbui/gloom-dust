@@ -61,9 +61,62 @@ Cragheart.handSize = 10;
 Cragheart.thumbnailUrl = '../../assets/images/portraits/cragheart.png';
 
 export const Sun = new CharacterClass();
+Sun.name = 'Sun';
+Sun.handSize = 10;
+Sun.thumbnailUrl = '../../assets/images/portraits/icon-sun.png';
 Sun.perks = [
     rollingPlus1, rollingHealSelf1, rollingStun, rollingLight, rollingShield1
-]
+];
+
+export const ThreeSpears = new CharacterClass();
+ThreeSpears.name = 'TreeSpears';
+ThreeSpears.handSize = 10;
+ThreeSpears.thumbnailUrl = '../../assets/images/portraits/icon-three-spears.png';
+
+export const Circles = new CharacterClass();
+Circles.name = 'Circles';
+Circles.handSize = 10;
+Circles.thumbnailUrl = '../../assets/images/portraits/icon-circles.png';
+
+export const Eclipse = new CharacterClass();
+Eclipse.name = 'Eclipse';
+Eclipse.handSize = 10;
+Eclipse.thumbnailUrl = '../../assets/images/portraits/icon-eclipse.png';
+
+export const Cthulhu = new CharacterClass();
+Cthulhu.name = 'Cthulhu';
+Cthulhu.handSize = 10;
+Cthulhu.thumbnailUrl = '../../assets/images/portraits/icon-cthulhu.png';
+
+export const Lightning = new CharacterClass();
+Lightning.name = 'Lightning';
+Lightning.handSize = 10;
+Lightning.thumbnailUrl = '../../assets/images/portraits/icon-lightning.png';
+
+export const Music = new CharacterClass();
+Music.name = 'Music';
+Music.handSize = 10;
+Music.thumbnailUrl = '../../assets/images/portraits/icon-music.png';
+
+export const Angry = new CharacterClass();
+Angry.name = 'Angry';
+Angry.handSize = 10;
+Angry.thumbnailUrl = '../../assets/images/portraits/icon-angry.png';
+
+export const Saw = new CharacterClass();
+Saw.name = 'Saw';
+Saw.handSize = 10;
+Saw.thumbnailUrl = '../../assets/images/portraits/icon-saw.png';
+
+export const Triangles = new CharacterClass();
+Triangles.name = 'Triangles';
+Triangles.handSize = 10;
+Triangles.thumbnailUrl = '../../assets/images/portraits/icon-triangles.png';
+
+export const Two = new CharacterClass();
+Two.name = 'Angry';
+Two.handSize = 10;
+Two.thumbnailUrl = '../../assets/images/portraits/icon-two.png';
 
 export const CharacterClasses = {};
 /* tslint:disable:no-string-literal */
@@ -73,4 +126,15 @@ CharacterClasses['spellweaver'] = Spellweaver;
 CharacterClasses['tinkerer'] = Tinkerer;
 CharacterClasses['mindthief'] = MindThief;
 CharacterClasses['cragheart'] = Cragheart;
+CharacterClasses['sun'] = Sun;
+CharacterClasses['threespears'] = ThreeSpears;
+CharacterClasses['circles'] = Circles;
+CharacterClasses['eclipse'] = Eclipse;
+CharacterClasses['cthulhu'] = Cthulhu;
+CharacterClasses['lightning'] = Lightning;
+CharacterClasses['music'] = Music;
+CharacterClasses['angry'] = Angry;
+CharacterClasses['saw'] = Saw;
+CharacterClasses['triangles'] = Triangles;
+CharacterClasses['two'] = Two;
 /* tslint:enable:no-string-literal */
