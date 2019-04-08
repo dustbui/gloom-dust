@@ -43,7 +43,7 @@ export class DeckEditorComponent implements OnInit {
             this.deck.shuffle();
             this.adjustHeights();
             this.allCards = allCards;
-            this.classCards = [ ...defaultCards, ...this.character.class.perks, ...scenarioCards];
+            this.classCards = this.character.class.perks ? [ ...defaultCards, ...this.character.class.perks, ...scenarioCards] : this.allCards
             this.cardsToShow = {
                 cards: this.classCards,
                 nameToSwitchTo: 'All'
