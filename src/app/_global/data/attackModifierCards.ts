@@ -204,6 +204,12 @@ immobilizePlus1.immobilize = true;
 immobilizePlus1.adder = 1;
 immobilizePlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)'
 
+export const poisonPlus1 = new AttackModifierCard();
+poisonPlus1.name = 'Poison +1';
+poisonPlus1.poison = true;
+poisonPlus1.adder = 1;
+poisonPlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
+
 export const shield1Plus1 = new AttackModifierCard();
 shield1Plus1.name = 'Shield One +1';
 shield1Plus1.shield = 1;
@@ -254,7 +260,7 @@ export const perkCards = [
     rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
     rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush1, 
     rollingPush2, rollingPull1, rollingShield1, addTargetPlus0, stunPlus0,
-    push1Plus1, pull1Plus1, immobilizePlus1, cursePlus1, woundPlus1, 
+    push1Plus1, pull1Plus1, immobilizePlus1, cursePlus1, woundPlus1, poisonPlus1,
     rollingHealSelf1, healSelf2Plus1, shield1Plus1, plus2Fire, plus2Ice, 
     plus2Muddle, rollingPlus1, Plus3
 ]
