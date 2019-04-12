@@ -4,7 +4,7 @@ import {
     rollingDisarm, rollingImmobilize, rollingInvisible, rollingStun, rollingMuddle, 
     rollingPoison, rollingPierce3, rollingAddTarget, rollingPush1, rollingPush2, 
     rollingPull1, rollingShield1, addTargetPlus0, stunPlus0, immobilizePlus1, 
-    cursePlus1, woundPlus1, rollingHealSelf1, healSelf2Plus1, shield1Plus1, 
+    cursePlus1, woundPlus1, poisonPlus1, rollingHealSelf1, healSelf2Plus1, shield1Plus1, 
     plus2Fire, plus2Ice, plus2Muddle, rollingPlus1, Plus3
 } from './attackModifierCards';
 
@@ -100,8 +100,11 @@ Music.thumbnailUrl = '../../assets/images/portraits/icon-music.png';
 
 export const Angry = new CharacterClass();
 Angry.name = 'Angry';
-Angry.handSize = 10;
+Angry.handSize = 12;
 Angry.thumbnailUrl = '../../assets/images/portraits/icon-angry.png';
+Angry.perks = [
+    rollingPlus1, plus2Muddle, immobilizePlus1, poisonPlus1, stunPlus0, rollingAddTarget
+];
 
 export const Saw = new CharacterClass();
 Saw.name = 'Saw';
