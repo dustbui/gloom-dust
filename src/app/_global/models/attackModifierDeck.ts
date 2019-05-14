@@ -34,6 +34,11 @@ export class AttackModifierDeck {
     }
     requiresShuffle: boolean;
     cards: AttackModifierCard[];
+    currentSession: {
+        cards: AttackModifierCard[];
+        discard: AttackModifierCard[];
+        round: number;
+    }
     discard: AttackModifierCard[];
     animationQueue: AttackModifierCard[];
     character: Character;
@@ -74,6 +79,14 @@ export class AttackModifierDeck {
         cards.forEach(card => {
             const newCard = Cards.retrieveCard(card.name);
             this.cards.push(newCard);
+        });
+    }
+
+    public mapDiscards(cards) {
+        this.discard = []; // Clear out existing deck if any
+        cards.forEach(card => {
+            const newCard = Cards.retrieveCard(card.name);
+            this.discard.push(newCard);
         });
     }
 

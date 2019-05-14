@@ -43,7 +43,7 @@ import * as Cards from '../_global/data/attackModifierCards';
                     stagger('500ms', [
                         animate('0.25s 1s ease-out', style({ transform: 'translateX(0%)', opacity: 1 }))
                     ])
-                ])
+                ], { optional: true })
             ]),
             transition(':leave', [
                 animate('0.25s ease-out', style({ opacity: '0' }))
@@ -85,7 +85,21 @@ export class AttackModifierSimulatorComponent implements OnInit {
             const storageCharacterJson = localStorage.getItem(`char:${characterName}`);
             this.character = JSON.parse(storageCharacterJson);
             console.log(`Loaded Character ${characterName}`);
-            this.deck.mapCards(this.character.attackModifierDeck.cards);
+            console.log(`Loading existing session if possible...`);
+            if (this.character.attackModifierDeck.currentSession &&
+                confirm("Would you like to load the previous session?")) {
+                this.deck.mapCards(this.character.attackModifierDeck.currentSession.cards);
+                this.deck.mapDiscards(this.character.attackModifierDeck.currentSession.discard);
+                this.roundCounter = this.character.attackModifierDeck.currentSession.round;
+            } else {
+                this.character.attackModifierDeck.currentSession = {
+                    cards: this.character.attackModifierDeck.cards,
+                    discard: [],
+                    round: 1
+                };
+                this.deck.mapCards(this.character.attackModifierDeck.cards);
+            }
+
             this.deck.shuffle();
             // Attach character to this deck
             this.deck.character = this.character;
@@ -127,11 +141,18 @@ export class AttackModifierSimulatorComponent implements OnInit {
         this.deck.animationQueue = [];
 
         setTimeout(() => {
+            // Perform attack
             this.attack = new Attack(this.baseDamage.value);
             this.attacks.createAttack(this.attack);
             this.deck.attack(this.attacks.currentAttack);
             this.baseDamage.setValue(0);
             this.adjustHeights();
+
+            // Store in local storage
+            this.character.attackModifierDeck.currentSession.cards = this.deck.cards;
+            this.character.attackModifierDeck.currentSession.discard = this.deck.discard;
+            this.character.attackModifierDeck.currentSession.round = this.roundCounter;
+            localStorage.setItem(`char:${this.character.name}`, JSON.stringify(this.character));
         }, 200);
     }
 

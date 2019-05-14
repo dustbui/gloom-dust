@@ -63,15 +63,17 @@
 
 </div>
 
+<div *ngIf="numpadEnabled" class="modal-exit" (click)="numpadEnabled = false"></div>
+
 <div *ngIf="numpadEnabled" class="numpad" [@slideUpAndBackOut]>
     <div class="row">
-        <div class="col-3" (click)="numpadEnabled = false"><i class="material-icons close">close</i></div>
         <div class="col-3" (click)="bless()">
             <div class="gh-icon bless"></div><sub>{{deck.blessCount}}</sub>
         </div>
         <div class="col-3" (click)="curse()">
             <div class="gh-icon curse"></div><sub>{{deck.curseCount}}</sub>
         </div>
+        <div class="col-3"></div>
         <div class="col-3 base-damage">{{baseDamage.value}}</div>
     </div>
     <div class="row">
