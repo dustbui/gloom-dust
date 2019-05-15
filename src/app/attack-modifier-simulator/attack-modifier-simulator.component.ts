@@ -54,6 +54,7 @@ import * as Cards from '../_global/data/attackModifierCards';
 export class AttackModifierSimulatorComponent implements OnInit {
     private routeParam: string;
     private footerHeight = 190;
+    private endRoundTimeout = null;
     public roundCounter = 1;
     public windowHeight: number;
     public windowWidth: number;
@@ -139,6 +140,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
         this.numpadEnabled = false;
         this.attack = null;
         this.deck.animationQueue = [];
+        if (this.endRoundTimeout) clearTimeout(this.endRoundTimeout);
 
         setTimeout(() => {
             // Perform attack
@@ -154,6 +156,13 @@ export class AttackModifierSimulatorComponent implements OnInit {
             this.character.attackModifierDeck.currentSession.round = this.roundCounter;
             localStorage.setItem(`char:${this.character.name}`, JSON.stringify(this.character));
         }, 200);
+
+        // Prompt user to proceed to next round after 45 seconds
+        this.endRoundTimeout = setTimeout(() => {
+            if (confirm("Would you like to proceed to the next round?")) {
+                this.proceedToNextRound();
+            }
+        }, 45000);
     }
 
     public toggleAdvantage() {

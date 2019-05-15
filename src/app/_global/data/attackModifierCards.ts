@@ -27,7 +27,7 @@ Plus2.centerImageUrl = 'url(assets/images/cards/plus2.png)';
 export const Plus3 = new AttackModifierCard();
 Plus3.name = '+3';
 Plus3.adder = 3;
-// Plus3.centerImageUrl = 'url(assets/images/cards/plus3.png)' add later
+Plus3.centerImageUrl = 'url(assets/images/cards/plus3.png)';
 
 export const Zero = new AttackModifierCard();
 Zero.name = '0';
@@ -248,7 +248,7 @@ rollingPlus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
 
 export const defaultCards = [
-    Plus1, Plus2, Zero, Minus1, 
+    Plus1, Plus2, Zero, Minus1,
     Minus2, x2, Null,
 ]
 
@@ -258,10 +258,10 @@ export const perkCards = [
     rollingFire, rollingIce, rollingNature, rollingWind,
     rollingLight, rollingDarkness, rollingDisarm, rollingImmobilize,
     rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
-    rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush1, 
+    rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush1,
     rollingPush2, rollingPull1, rollingShield1, addTargetPlus0, stunPlus0,
     push1Plus1, pull1Plus1, immobilizePlus1, cursePlus1, woundPlus1, poisonPlus1,
-    rollingHealSelf1, healSelf2Plus1, shield1Plus1, plus2Fire, plus2Ice, 
+    rollingHealSelf1, healSelf2Plus1, shield1Plus1, plus2Fire, plus2Ice,
     plus2Muddle, rollingPlus1, Plus3
 ]
 export const allCards = [

@@ -61,7 +61,14 @@ export class AttackModifierCard {
         // attack.value += this.adder;
         attack.adders += this.adder;
         attack.multipliers *= this.multiplier;
+
         attack.pierce += this.pierce;
+        attack.push += this.push;
+        attack.pull += this.pull;
+        attack.shield += this.shield;
+        attack.targets += this.targets;
+        attack.heal += this.heal;
+        attack.healSelf += this.healSelf;
         // don't think you can roll multipliers, so this should be the last effect applied each time
         // attack.value *= this.multiplier;
 
@@ -78,14 +85,8 @@ export class AttackModifierCard {
         attack.muddle = attack.muddle || this.muddle;
         attack.stun = attack.stun || this.stun;
         attack.disarm = attack.disarm || this.disarm;
-        attack.push = attack.push || this.push;
-        attack.pull = attack.pull || this.pull;
         attack.invisible = attack.invisible || this.invisible;
         attack.immobilize = attack.immobilize || this.immobilize;
-        attack.shield = attack.shield || this.shield;
-        attack.targets = attack.targets || this.targets;
-        attack.heal = attack.heal || this.heal;
-        attack.healSelf = attack.healSelf || this.healSelf;
     }
 
     public clone() {
