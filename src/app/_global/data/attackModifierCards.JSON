@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Zero",
+    "adder": 0,
+    "centerImageUrl": "url(assets/images/cards/zero.png)"
+  },
+  {
+    "name": "Bless",
+    "multiplier": 2,
+    "consumed": true,
+    "centerImageUrl": "url(assets/images/cards/bless.png)"
+  },
+  {
+    "name": "Curse",
+    "multiplier": 0,
+    "consumed": true,
+    "centerImageUrl": "url(assets/images/cards/curse.png)"
+  },
+  {
+    "name": "+1",
+    "adder": 1,
+    "defaultAmount": 5,
+    "centerImageUrl": "url(assets/images/cards/plus1.png)"
+  },
+  {
+    "name": "+2",
+    "adder": 2,
+    "defaultAmount": 1,
+    "centerImageUrl": "url(assets/images/cards/plus2.png)"
+  },
+  {
+    "name": "0",
+    "adder": 0,
+    "defaultAmount": 6,
+    "centerImageUrl": "url(assets/images/cards/zero.png)"
+  },
+  {
+    "name": "-1",
+    "adder": -1,
+    "defaultAmount": 5,
+    "centerImageUrl": "url(assets/images/cards/minus1.png)"
+  },
+  {
+    "name": "-2",
+    "adder": -2,
+    "defaultAmount": 1,
+    "centerImageUrl": "url(assets/images/cards/minus2.png)"
+  },
+  {
+    "name": "NULL",
+    "shuffler": true,
+    "multiplier": 0,
+    "defaultAmount": 1,
+    "centerImageUrl": "url(assets/images/cards/null.png)"
+  },
+  {
+    "name": "x2",
+    "shuffler": true,
+    "defaultAmount": 1,
+    "multiplier": 2,
+    "centerImageUrl": "url(assets/images/cards/crit.png)"
+  }
+]
