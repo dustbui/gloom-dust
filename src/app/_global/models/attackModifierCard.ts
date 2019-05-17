@@ -25,7 +25,7 @@ export class AttackModifierCard {
     push: number;
     pull: number;
     heal: number;
-    healSelf: number;
+    selfHeal: number;
     shield: number;
     retaliate: number;
     curse: number;
@@ -52,7 +52,7 @@ export class AttackModifierCard {
         this.targets = 0;
         this.shield = 0;
         this.heal = 0;
-        this.healSelf = 0;
+        this.selfHeal = 0;
         this.centerImageUrl = 'url(assets/images/cards/zero.png)';
         this.defaultAmount = 0;
     }
@@ -68,7 +68,7 @@ export class AttackModifierCard {
         attack.shield += this.shield;
         attack.targets += this.targets;
         attack.heal += this.heal;
-        attack.healSelf += this.healSelf;
+        attack.selfHeal += this.selfHeal;
         // don't think you can roll multipliers, so this should be the last effect applied each time
         // attack.value *= this.multiplier;
 
@@ -107,7 +107,7 @@ export class AttackModifierCard {
         newCard.push = this.push;
         newCard.pull = this.pull;
         newCard.heal = this.heal;
-        newCard.healSelf = this.healSelf;
+        newCard.selfHeal = this.selfHeal;
         newCard.curse = this.curse;
         newCard.bless = this.bless;
 

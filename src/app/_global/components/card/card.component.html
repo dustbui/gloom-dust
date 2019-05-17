@@ -24,8 +24,8 @@
   <div *ngIf='card.shield' class='effect-icon shield'>
       <div class='effect-text'>{{card.shield}}</div>
   </div>
-  <div *ngIf='card.heal || card.healSelf' class='effect-icon heal'>
-      <div class='effect-text'>{{card.heal || card.healSelf}}</div>
+  <div *ngIf='card.heal || card.selfHeal' class='effect-icon heal'>
+      <div class='effect-text'>{{card.heal || card.selfHeal}}</div>
   </div> 
 
   <div *ngIf="card.fire" class="effect-icon fire"></div>

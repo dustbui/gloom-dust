@@ -4,7 +4,7 @@ import {
     rollingDisarm, rollingImmobilize, rollingInvisible, rollingStun, rollingMuddle, 
     rollingPoison, rollingPierce3, rollingAddTarget, rollingPush1, rollingPush2, 
     rollingPull1, rollingShield1, addTargetPlus0, stunPlus0, immobilizePlus1, 
-    cursePlus1, woundPlus1, poisonPlus1, rollingHealSelf1, healSelf2Plus1, shield1Plus1, 
+    cursePlus1, woundPlus1, poisonPlus1, rollingselfHeal1, selfHeal2Plus1, shield1Plus1, 
     plus2Fire, plus2Ice, plus2Muddle, rollingPlus1, Plus3
 } from './attackModifierCards';
 
@@ -37,7 +37,7 @@ Spellweaver.thumbnailUrl = '../../assets/images/portraits/spellweaver.png';
 export const Tinkerer = new CharacterClass();
 Tinkerer.perks = [
     Plus3, rollingFire, rollingMuddle, woundPlus1, 
-    immobilizePlus1, healSelf2Plus1, addTargetPlus0
+    immobilizePlus1, selfHeal2Plus1, addTargetPlus0
 ]
 Tinkerer.name = 'Tinkerer';
 Tinkerer.handSize = 14;
@@ -65,7 +65,7 @@ Sun.name = 'Sun';
 Sun.handSize = 10;
 Sun.thumbnailUrl = '../../assets/images/portraits/icon-sun.png';
 Sun.perks = [
-    rollingPlus1, rollingHealSelf1, rollingStun, rollingLight, rollingShield1
+    rollingPlus1, rollingselfHeal1, rollingStun, rollingLight, rollingShield1
 ];
 
 export const ThreeSpears = new CharacterClass();

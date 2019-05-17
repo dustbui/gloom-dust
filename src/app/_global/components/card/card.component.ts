@@ -15,7 +15,6 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.card);
     this.height = this.width * 0.675;
   }
 

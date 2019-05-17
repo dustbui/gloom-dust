@@ -156,10 +156,10 @@ rollingPush1.name = 'Rolling Push One';
 rollingPush1.push = 1;
 rollingPush1.chained = true;
 
-export const rollingHealSelf1 = new AttackModifierCard();
-rollingHealSelf1.name = 'Rolling Heal Self One'
-rollingHealSelf1.healSelf = 1;
-rollingHealSelf1.chained = true;
+export const rollingselfHeal1 = new AttackModifierCard();
+rollingselfHeal1.name = 'Rolling Heal Self One'
+rollingselfHeal1.selfHeal = 1;
+rollingselfHeal1.chained = true;
 
 export const rollingShield1 = new AttackModifierCard();
 rollingShield1.name = 'Rolling Sheild Self One';
@@ -216,11 +216,11 @@ shield1Plus1.shield = 1;
 shield1Plus1.adder = 1;
 shield1Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
-export const healSelf2Plus1 = new AttackModifierCard();
-healSelf2Plus1.name = 'Heal Self Two +1'
-healSelf2Plus1.healSelf = 2;
-healSelf2Plus1.adder = 1;
-healSelf2Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
+export const selfHeal2Plus1 = new AttackModifierCard();
+selfHeal2Plus1.name = 'Heal Self Two +1'
+selfHeal2Plus1.selfHeal = 2;
+selfHeal2Plus1.adder = 1;
+selfHeal2Plus1.centerImageUrl = 'url(assets/images/cards/plus1.png)';
 
 export const plus2Fire = new AttackModifierCard();
 plus2Fire.name = 'Fire +2';
@@ -261,7 +261,7 @@ export const perkCards = [
     rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush1,
     rollingPush2, rollingPull1, rollingShield1, addTargetPlus0, stunPlus0,
     push1Plus1, pull1Plus1, immobilizePlus1, cursePlus1, woundPlus1, poisonPlus1,
-    rollingHealSelf1, healSelf2Plus1, shield1Plus1, plus2Fire, plus2Ice,
+    rollingselfHeal1, selfHeal2Plus1, shield1Plus1, plus2Fire, plus2Ice,
     plus2Muddle, rollingPlus1, Plus3
 ]
 export const allCards = [
@@ -274,4 +274,14 @@ export function retrieveCard(name: string) {
     return allCards.find((c) => {
         return name == c.name;
     }).clone();
+}
+
+export const ImageMapper = adder => {
+    return {
+        '0': "url(assets/images/cards/zero.png)",
+        '1': "url(assets/images/cards/plus1.png)",
+        '2': "url(assets/images/cards/plus2.png)",
+        '-1': "url(assets/images/cards/minus1.png)",
+        '-2': "url(assets/images/cards/minus2.png)"
+    }[adder]
 }

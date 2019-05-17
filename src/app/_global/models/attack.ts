@@ -9,7 +9,7 @@ export class Attack {
         this.curse = 0;
         this.bless = 0;
         this.heal = 0;
-        this.healSelf = 0;
+        this.selfHeal = 0;
         // console.log(`New attack created: ${JSON.stringify(this)}`);
     }
     committed: boolean;
@@ -29,7 +29,7 @@ export class Attack {
     adders: number;
     multipliers: number;
     pierce: number;
-    healSelf: number;
+    selfHeal: number;
     heal: number;
     shield: number;
     retaliate: number;
@@ -59,7 +59,7 @@ export class Attack {
         // newAttack.value = this.value;
         newAttack.pierce = this.pierce;
         newAttack.heal = this.heal;
-        newAttack.healSelf = this.healSelf;
+        newAttack.selfHeal = this.selfHeal;
         newAttack.pull = this.pull;
         newAttack.push = this.push;
         newAttack.curse = this.curse;
