@@ -1,7 +1,7 @@
 [
   {
     "name": "Zero",
-    "adder": 0,
+    "adder": 0
   },
   {
     "name": "Bless",
@@ -18,27 +18,27 @@
   {
     "name": "+1",
     "adder": 1,
-    "defaultAmount": 5,
+    "defaultAmount": 5
   },
   {
     "name": "+2",
     "adder": 2,
-    "defaultAmount": 1,
+    "defaultAmount": 1
   },
   {
     "name": "0",
     "adder": 0,
-    "defaultAmount": 6,
+    "defaultAmount": 6
   },
   {
     "name": "-1",
     "adder": -1,
-    "defaultAmount": 5,
+    "defaultAmount": 5
   },
   {
     "name": "-2",
     "adder": -2,
-    "defaultAmount": 1,
+    "defaultAmount": 1
   },
   {
     "name": "NULL",

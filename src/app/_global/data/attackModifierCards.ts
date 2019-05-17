@@ -166,13 +166,13 @@ rollingShield1.name = 'Rolling Sheild Self One';
 rollingShield1.shield = 1;
 rollingShield1.chained = true;
 
-export const addTargetPlus0 = new AttackModifierCard();
-addTargetPlus0.name = 'Add Target';
-addTargetPlus0.targets = 1;
+export const addTarget = new AttackModifierCard();
+addTarget.name = 'Add Target';
+addTarget.targets = 1;
 
-export const stunPlus0 = new AttackModifierCard();
-stunPlus0.name = 'Stun';
-stunPlus0.stun = true;
+export const stun = new AttackModifierCard();
+stun.name = 'Stun';
+stun.stun = true;
 
 export const push1Plus1 = new AttackModifierCard();
 push1Plus1.name = 'Push One +1';
@@ -259,7 +259,7 @@ export const perkCards = [
     rollingLight, rollingDarkness, rollingDisarm, rollingImmobilize,
     rollingInvisible, rollingStun, rollingMuddle, rollingPoison,
     rollingPierce3, rollingStrengthen, rollingAddTarget, rollingPush1,
-    rollingPush2, rollingPull1, rollingShield1, addTargetPlus0, stunPlus0,
+    rollingPush2, rollingPull1, rollingShield1, addTarget, stun,
     push1Plus1, pull1Plus1, immobilizePlus1, cursePlus1, woundPlus1, poisonPlus1,
     rollingselfHeal1, selfHeal2Plus1, shield1Plus1, plus2Fire, plus2Ice,
     plus2Muddle, rollingPlus1, Plus3
