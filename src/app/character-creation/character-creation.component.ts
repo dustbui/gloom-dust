@@ -18,7 +18,7 @@ export class CharacterCreationComponent implements OnInit {
     public windowHeight: number;
     public windowWidth: number;
     public containerHeight: number;
-    public selectedId: number = 1000;
+    public selectedId: number;
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
