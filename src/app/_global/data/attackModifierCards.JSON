@@ -1,8 +1,7 @@
 [
   {
     "name": "Zero",
-    "adder": 0,
-    "centerImageUrl": "url(assets/images/cards/zero.png)"
+    "adder": 0
   },
   {
     "name": "Bless",
@@ -19,32 +18,27 @@
   {
     "name": "+1",
     "adder": 1,
-    "defaultAmount": 5,
-    "centerImageUrl": "url(assets/images/cards/plus1.png)"
+    "defaultAmount": 5
   },
   {
     "name": "+2",
     "adder": 2,
-    "defaultAmount": 1,
-    "centerImageUrl": "url(assets/images/cards/plus2.png)"
+    "defaultAmount": 1
   },
   {
     "name": "0",
     "adder": 0,
-    "defaultAmount": 6,
-    "centerImageUrl": "url(assets/images/cards/zero.png)"
+    "defaultAmount": 6
   },
   {
     "name": "-1",
     "adder": -1,
-    "defaultAmount": 5,
-    "centerImageUrl": "url(assets/images/cards/minus1.png)"
+    "defaultAmount": 5
   },
   {
     "name": "-2",
     "adder": -2,
-    "defaultAmount": 1,
-    "centerImageUrl": "url(assets/images/cards/minus2.png)"
+    "defaultAmount": 1
   },
   {
     "name": "NULL",
@@ -59,5 +53,199 @@
     "defaultAmount": 1,
     "multiplier": 2,
     "centerImageUrl": "url(assets/images/cards/crit.png)"
+  },
+  {
+    "name": "Rolling Nature",
+    "chained": true,
+    "nature": true
+  },
+  {
+    "name": "Rolling Fire",
+    "chained": true,
+    "fire": true
+  },
+  {
+    "name": "Rolling Ice",
+    "chained": true,
+    "ice": true
+  },
+  {
+    "name": "Rolling Wind",
+    "chained": true,
+    "wind": true
+  },
+  {
+    "name": "Rolling Light",
+    "chained": true,
+    "light": true
+  },
+  {
+    "name": "Rolling Darkness",
+    "chained": true,
+    "darkness": true
+  },
+  {
+    "name": "Rolling Muddle",
+    "chained": true,
+    "muddle": true
+  },
+  {
+    "name": "Rolling Invisible",
+    "chained": true,
+    "invisible": true
+  },
+  {
+    "name": "Rolling Disarm",
+    "chained": true,
+    "disarm": true
+  },
+  {
+    "name": "Rolling Stun",
+    "chained": true,
+    "stun": true
+  },
+  {
+    "name": "Rolling Poison",
+    "chained": true,
+    "poison": true
+  },
+  {
+    "name": "Rolling Wound",
+    "chained": true,
+    "wound": true
+  },
+  {
+    "name": "Rolling Strengthen",
+    "chained": true,
+    "strengthen": true
+  },
+  {
+    "name": "Rolling Immobilize",
+    "chained": true,
+    "immobilize": true
+  },
+  {
+    "name": "Rolling Pierce 3",
+    "chained": true,
+    "pierce": 3 
+  },
+  {
+    "name": "Rolling Add Target",
+    "chained": true,
+    "targets": 1
+  },
+  {
+    "name": "Rolling Pull One",
+    "chained": true,
+    "pull": 1
+  },
+  {
+    "name": "Rolling Push One",
+    "chained": true,
+    "push": 2
+  },
+  {
+    "name": "Rolling Push Two",
+    "chained": true,
+    "push": 2
+  },
+  {
+    "name": "Rolling Self Heal One",
+    "chained": true,
+    "selfHeal": 1
+  },
+  {
+    "name": "Rolling Sheild Self One",
+    "chained": true,
+    "shield": 1
+  },
+  {
+    "name": "Rolling +1",
+    "adder": 1,
+    "chained": true
+  },
+  {
+    "name": "Rolling +2",
+    "adder": 2,
+    "chained": true
+  },
+  {
+    "name": "Add Target",
+    "targets": 1
+  },
+  {
+    "name": "Stun",
+    "stun": true
+  },
+  {
+    "name": "Push One +1",
+    "push": 1,
+    "adder": 1
+  },
+  {
+    "name": "Pull One +1",
+    "pull": 1,
+    "adder": 1
+  },
+  {
+    "name": "Would +1",
+    "wound": true,
+    "adder": 1
+  },
+  {
+    "name": "Curse +1",
+    "curse": 1,
+    "adder": 1
+  },
+  {
+    "name": "Immobilize +1",
+    "immobilize": true,
+    "adder": 1
+  },
+  {
+    "name": "Poison +1",
+    "poison": true,
+    "adder": 1
+  },
+  {
+    "name": "Shield One +1",
+    "shield": 1,
+    "adder": 1
+  },
+  {
+    "name": "Self Heal Two +1",
+    "selfHeal": 2,
+    "adder": 1
+  },
+  {
+    "name": "Fire +2",
+    "adder": 2,
+    "fire": true
+  },
+  {
+    "name": "Ice +2",
+    "adder": 2,
+    "ice": true
+  },
+  {
+    "name": "Muddle +2",
+    "adder": 2,
+    "muddle": true
+  },
+  {
+    "name": "Fire",
+    "fire": true
+  },
+  {
+    "name": "Ice",
+    "ice": true
+  },
+  {
+    "name": "Wind",
+    "wind": true
+  },
+  {
+    "name": "Nature",
+    "nature": true
   }
 ]
