@@ -6,9 +6,9 @@
                 <!-- <label for="name">Character Name</label> -->
             </div>
             <div class="row character-portraits">
-                <div class="col-4 col-md-6" *ngFor="let c of allClasses">
-                    <div class="character-portrait" 
-                        (click)="class = c.name"
+                <div class="col-4 col-md-6" *ngFor="let c of allClasses; index as i">
+                    <div [class]="isPortraitSelected(i) ? 'selected character-portrait' : 'character-portrait'"
+                        (click)="setSelected(c, i)"
                         [style.backgroundImage]="'url(' + c.thumbnailUrl + ')'"></div>
                 </div>
             </div>

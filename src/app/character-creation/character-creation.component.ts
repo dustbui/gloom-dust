@@ -18,6 +18,7 @@ export class CharacterCreationComponent implements OnInit {
     public windowHeight: number;
     public windowWidth: number;
     public containerHeight: number;
+    public selectedId: number;
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
@@ -30,6 +31,15 @@ export class CharacterCreationComponent implements OnInit {
         this.adjustHeights();
 
         this.allClasses = Object.values(CharacterClasses);
+    }
+
+    public setSelected(c, index) {
+        this.class = c.name
+        this.selectedId = index;
+    }
+
+    public isPortraitSelected(index) {
+        return index === this.selectedId;
     }
 
     public createCharacter() {
