@@ -31,10 +31,10 @@
     -webkit-font-smoothing: antialiased;
 }
 
-$red: #e74c3c;
+$red: #E39688;
 $orange: #e67e22;
 $yellow: #f1c40f;
-$green: #2ecc71;
+$green: #B0D78D;
 $blue: #3498db;
 $dark: #34495e;
 $grey: #7f8c8d;
@@ -44,6 +44,22 @@ body {
     // background-color: var(--base-bg);
     // color: var(--base-text);
     // font-family: "Pirata One";
+}
+
+.green {
+    background-color: $green;
+}
+
+.text-green {
+    color: $green;
+}
+
+.red {
+    background-color: $red;
+}
+
+.text-red {
+    color: $red;
 }
 
 .shadow-1 {
@@ -103,12 +119,18 @@ input::placeholder {
     padding: 15px;
     margin: 15px;
 
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 
     a {
@@ -176,12 +198,18 @@ input::placeholder {
 }
 
 .material-icons {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 
 }

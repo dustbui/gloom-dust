@@ -136,11 +136,16 @@ export class AttackModifierSimulatorComponent implements OnInit {
         this.deck.animationQueue = [];
     }
 
+    public openNumpad() {
+        this.numpadEnabled = true;
+        this.resetEndRoundTimeout();
+    }
+
     public createNewAttack() {
         this.numpadEnabled = false;
         this.attack = null;
         this.deck.animationQueue = [];
-        if (this.endRoundTimeout) clearTimeout(this.endRoundTimeout);
+        this.clearEndRoundTimeout();
 
         setTimeout(() => {
             // Perform attack
@@ -157,12 +162,25 @@ export class AttackModifierSimulatorComponent implements OnInit {
             localStorage.setItem(`char:${this.character.name}`, JSON.stringify(this.character));
         }, 200);
 
+        this.startEndRoundTimeout();
+    }
+
+    private clearEndRoundTimeout() {
+        if (this.endRoundTimeout) clearTimeout(this.endRoundTimeout);
+    }
+
+    private startEndRoundTimeout() {
         // Prompt user to proceed to next round after 45 seconds
         this.endRoundTimeout = setTimeout(() => {
             if (confirm("Would you like to proceed to the next round?")) {
                 this.proceedToNextRound();
             }
         }, 45000);
+    }
+
+    private resetEndRoundTimeout() {
+        this.clearEndRoundTimeout();
+        this.startEndRoundTimeout();
     }
 
     public toggleAdvantage() {

@@ -17,7 +17,9 @@
                     <div class="card-action subtract shadow-3" (click)="removeCard(card.name)"></div>
 
                     <div class="card-amount">
-                        {{deck.count(card.name)}}
+                        <span
+                            [ngClass]="{'text-green': deck.count(card.name) - card.defaultAmount > 0, 
+                                        'text-red': deck.count(card.name) - card.defaultAmount < 0}">{{deck.count(card.name)}}</span>
                     </div>
 
                     <div class="card-action add shadow-3" (click)="addCard(card.name)"></div>
