@@ -55,6 +55,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
     private routeParam: string;
     private footerHeight = 190;
     private endRoundTimeout = null;
+    private manuallyProceeded = false;
     public roundCounter = 1;
     public windowHeight: number;
     public windowWidth: number;
@@ -126,6 +127,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
 
     public proceedToNextRound() {
         this.roundCounter++;
+        this.manuallyProceeded = true; // Used for ignoring the prompt
         if (this.deck.requiresShuffle) {
             this.deck.reshuffle();
         }
@@ -170,8 +172,16 @@ export class AttackModifierSimulatorComponent implements OnInit {
     }
 
     private startEndRoundTimeout() {
+        this.manuallyProceeded = false; // Reset this flag
+
         // Prompt user to proceed to next round after 45 seconds
         this.endRoundTimeout = setTimeout(() => {
+            // Do not prompt if numpad is enabled, or the discard is empty, or round was ended manually
+            if (!this.numpadEnabled || !this.deck.discard.length || this.manuallyProceeded) {
+                this.startEndRoundTimeout(); // Reset timer on prompt
+                return;
+            };
+
             if (confirm("Would you like to proceed to the next round?")) {
                 this.proceedToNextRound();
             }
