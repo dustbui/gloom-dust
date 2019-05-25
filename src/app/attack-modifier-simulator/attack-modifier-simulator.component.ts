@@ -177,7 +177,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
         // Prompt user to proceed to next round after 45 seconds
         this.endRoundTimeout = setTimeout(() => {
             // Do not prompt if numpad is enabled, or the discard is empty, or round was ended manually
-            if (!this.numpadEnabled || !this.deck.discard.length || this.manuallyProceeded) {
+            if (this.numpadEnabled || !this.deck.discard.length || this.manuallyProceeded) {
                 this.startEndRoundTimeout(); // Reset timer on prompt
                 return;
             };
