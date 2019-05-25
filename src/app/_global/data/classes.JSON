@@ -70,7 +70,10 @@
     ]
   },
   {
-    "name": "Saw"
+    "name": "Saw",
+    "perks": [
+      "rollingPlus2", "immobilizePlus1", "rollingWound", "rollingStun", "rollingselfHeal1"
+    ]
   },
   {
     "name": "Triangles",
