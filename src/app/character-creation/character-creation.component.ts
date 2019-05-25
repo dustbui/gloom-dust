@@ -19,6 +19,7 @@ export class CharacterCreationComponent implements OnInit {
     public windowWidth: number;
     public containerHeight: number;
     public selectedId: number;
+    public placeholderText = 'Character Name...'
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
@@ -42,7 +43,15 @@ export class CharacterCreationComponent implements OnInit {
         return index === this.selectedId;
     }
 
+    public isWarningVisable() {
+        return this.placeholderText === 'Must have a character name!';
+    }
+
     public createCharacter() {
+        if (this.name.value === '') {
+            this.placeholderText = 'Must have a character name!'
+            return;
+        }
         const newCharacter = new Character();
         newCharacter.name = this.name.value;
         const characterClass = CharacterClasses[this.class.toLowerCase()] || new CharacterClass();

@@ -24,3 +24,11 @@
 .selected {
     outline: 3px solid $yellow;
 }
+
+.no-warning::placeholder {
+    color: white;
+}
+
+.warning::placeholder {
+    color: $red;
+}

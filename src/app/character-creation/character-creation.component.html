@@ -2,7 +2,12 @@
     <div class="container" [style.height.px]="windowHeight">
         <div class="form">
             <div class="row">
-                <input type="text" id="name" placeholder="Character Name..." [formControl]="name">
+                <input 
+                    type="text" 
+                    id="name" 
+                    [placeholder]='placeholderText' 
+                    [class]="isWarningVisable() ? 'warning' : 'no-warning'" 
+                    [formControl]="name">
                 <!-- <label for="name">Character Name</label> -->
             </div>
             <div class="row character-portraits">
