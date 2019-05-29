@@ -251,5 +251,9 @@
   {
     "name": "Nature",
     "nature": true
+  },
+  {
+    "name": "Refresh Item",
+    "refreshItem": true
   }
 ]

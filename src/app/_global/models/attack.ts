@@ -24,6 +24,7 @@ export class Attack {
     strengthen: boolean;
     invisible: boolean;
     immobilize: boolean;
+    refreshItem: boolean;
 
     base: number;
     adders: number;
@@ -76,6 +77,7 @@ export class Attack {
         newAttack.invisible = this.invisible;
         newAttack.immobilize = this.immobilize;
         newAttack.stun = this.stun;
+        newAttack.refreshItem = this.refreshItem;
 
         newAttack.fire = this.fire;
         newAttack.ice = this.ice;

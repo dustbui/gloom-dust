@@ -45,7 +45,10 @@
     ]
   },
   {
-    "name": "ThreeSpears"
+    "name": "ThreeSpears",
+    "perks": [
+      "Rolling +1", "Rolling Muddle", "Rolling Pierce 3", "Rolling Stun", "Rolling Add Target", "Refresh Item"
+    ]
   },
   {
     "name": "Circles"
