@@ -20,6 +20,7 @@ export class AttackModifierCard {
     muddle: boolean;
     invisible: boolean;
     immobilize: boolean;
+    refreshItem: boolean;
 
     pierce: number;
     push: number;
@@ -44,6 +45,7 @@ export class AttackModifierCard {
         this.shuffler = false;
         this.chained = false;
         this.consumed = false;
+        this.refreshItem = false;
         this.multiplier = 1;
         this.adder = 0;
         this.pierce = 0;
@@ -87,6 +89,7 @@ export class AttackModifierCard {
         attack.disarm = attack.disarm || this.disarm;
         attack.invisible = attack.invisible || this.invisible;
         attack.immobilize = attack.immobilize || this.immobilize;
+        attack.refreshItem = attack.refreshItem || this.refreshItem;
     }
 
     public clone() {
@@ -119,6 +122,7 @@ export class AttackModifierCard {
         newCard.muddle = this.muddle;
         newCard.invisible = this.invisible;
         newCard.immobilize = this.immobilize;
+        newCard.refreshItem = this.refreshItem;
         newCard.shield = this.shield;
         newCard.targets = this.targets;
 
