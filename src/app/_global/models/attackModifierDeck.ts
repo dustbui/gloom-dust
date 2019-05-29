@@ -9,28 +9,12 @@ export class AttackModifierDeck {
         this.animationQueue = [];
         this.requiresShuffle = false;
         // Instantiate with standard attack modifier deck
-        this.cards = [
-            Cards.Plus1.clone(),
-            Cards.Plus1.clone(),
-            Cards.Plus1.clone(),
-            Cards.Plus1.clone(),
-            Cards.Plus1.clone(),
-            Cards.Minus1.clone(),
-            Cards.Minus1.clone(),
-            Cards.Minus1.clone(),
-            Cards.Minus1.clone(),
-            Cards.Minus1.clone(),
-            Cards.Zero.clone(),
-            Cards.Zero.clone(),
-            Cards.Zero.clone(),
-            Cards.Zero.clone(),
-            Cards.Zero.clone(),
-            Cards.Zero.clone(),
-            Cards.Minus2.clone(),
-            Cards.Null.clone(),
-            Cards.Plus2.clone(),
-            Cards.x2.clone()
-        ];
+        this.cards = [];
+        Cards.defaultCards.forEach(defaultCard => {
+            for (var i = 0; i < defaultCard.defaultAmount; i++) {
+                this.cards.push(Cards.retrieveCard(defaultCard.name));
+            }
+        });
     }
     requiresShuffle: boolean;
     cards: AttackModifierCard[];

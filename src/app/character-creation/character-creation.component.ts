@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Character } from '../_global/models/character';
 import { Router } from '@angular/router';
 import { CharacterClass } from '../_global/models/CharacterClass';
-import { CharacterClasses } from '../_global/data/classes';
+import { CharacterClasses } from '../_global/data/characterClasses';
 import { Constants } from '../_global/constants';
 
 @Component({
@@ -31,7 +31,7 @@ export class CharacterCreationComponent implements OnInit {
     ngOnInit() {
         this.adjustHeights();
 
-        this.allClasses = Object.values(CharacterClasses);
+        this.allClasses = Array.from(CharacterClasses.values());
     }
 
     public setSelected(c, index) {
@@ -54,7 +54,7 @@ export class CharacterCreationComponent implements OnInit {
         }
         const newCharacter = new Character();
         newCharacter.name = this.name.value;
-        const characterClass = CharacterClasses[this.class.toLowerCase()] || new CharacterClass();
+        const characterClass = CharacterClasses.get(this.class);
         newCharacter.class = characterClass;
         const jsonCharacterString = JSON.stringify(newCharacter);
         localStorage.setItem(`char:${this.name.value}`, jsonCharacterString);

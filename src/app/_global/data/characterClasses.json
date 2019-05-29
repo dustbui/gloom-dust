@@ -1,0 +1,87 @@
+[{
+    "name": "Brute",
+    "perks": [
+      "+3", "Rolling Push 1", "Rolling Pierce 3", "Rolling Stun",
+      "Rolling Disarm", "Rolling Muddle", "Rolling Add Target", "Shield 1 +1"
+    ]
+  },
+  {
+    "name": "Scoundrel",
+    "perks": [
+      "Rolling +1", "Rolling Pierce 3", "Rolling Poison", "Rolling Muddle", "Rolling Invisible"
+    ]
+  },
+  {
+    "name": "Spellweaver",
+    "perks": [
+      "Fire +2", "Ice +2", "Curse +1", "Wound +1", "Stun", "Immobilize +1",
+      "Rolling Nature", "Rolling Wind", "Rolling Light", "Rolling Darkness"
+    ]
+  },
+  {
+    "name": "Tinkerer",
+    "perks": [
+      "+3", "Rolling Fire", "Rolling Muddle", "Wound +1",
+      "Immobilize +1", "Self Heal 2 +1", "Add Target"
+    ]
+  },
+  {
+    "name": "MindThief",
+    "perks": [
+      "Ice +2", "Rolling +1", "Rolling Pull 1", "Rolling Muddle",
+      "Rolling Immobilize", "Rolling Disarm", "Rolling Stun"
+    ]
+  },
+  {
+    "name": "Cragheart",
+    "perks": [
+      "Immobilize +1", "Muddle +2", "Rolling Push 2", "Rolling Nature", "Rolling Wind"
+    ]
+  },
+  {
+    "name": "Sun",
+    "perks": [
+      "Rolling +1", "Rolling Self Heal 1", "Rolling Stun", "Rolling Light", "Rolling Shield 1"
+    ]
+  },
+  {
+    "name": "ThreeSpears"
+  },
+  {
+    "name": "Circles"
+  },
+  {
+    "name": "Eclipse"
+  },
+  {
+    "name": "Cthulhu"
+  },
+  {
+    "name": "Lightning"
+  },
+  {
+    "name": "Music"
+  },
+  {
+    "name": "Angry",
+    "perks": [
+      "Rolling +1", "Muddle +2", "Immobilize +1", "Poison +1", "Stun", "Rolling Add Target"
+    ]
+  },
+  {
+    "name": "Saw",
+    "perks": [
+      "Rolling +2", "Immobilize +1", "Rolling Wound", "Rolling Stun", "Rolling Self Heal 1"
+    ]
+  },
+  {
+    "name": "Triangles",
+    "perks": [
+      "Fire", "Ice", "Wind", "Nature", "Push 1 +1",
+      "Wound +1", "Stun", "Add Target"
+    ]
+  },
+  {
+    "name": "Two"
+  }
+]

@@ -6,8 +6,8 @@ import { Attack } from '../_global/models/attack';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Attacks } from '../_global/models/attacks';
 import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
-import { Bless, Curse } from '../_global/data/attackModifierCards';
 import * as Cards from '../_global/data/attackModifierCards';
+import { CharacterClasses } from '../_global/data/characterClasses';
 
 @Component({
     selector: 'app-attack-modifier-simulator',
@@ -86,6 +86,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
             console.log(`Retrieving Character "${characterName}"...`);
             const storageCharacterJson = localStorage.getItem(`char:${characterName}`);
             this.character = JSON.parse(storageCharacterJson);
+            this.character.class = CharacterClasses.get(this.character.class.name); // Get class from code
             console.log(`Loaded Character ${characterName}`);
             console.log(`Loading existing session if possible...`);
             if (this.character.attackModifierDeck.currentSession &&
@@ -236,13 +237,13 @@ export class AttackModifierSimulatorComponent implements OnInit {
     }
 
     public curse() {
-        const curseCard = Curse.clone();
+        const curseCard = Cards.retrieveCard("Curse");
         this.deck.cards.push(curseCard);
         this.deck.shuffle();
     }
 
     public bless() {
-        const blessCard = Bless.clone();
+        const blessCard = Cards.retrieveCard("Bless");
         this.deck.cards.push(blessCard);
         this.deck.shuffle();
     }

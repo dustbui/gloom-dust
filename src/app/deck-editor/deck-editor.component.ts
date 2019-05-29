@@ -4,6 +4,7 @@ import { Character } from '../_global/models/character';
 import { AttackModifierDeck } from '../_global/models/attackModifierDeck';
 import { AttackModifierCard } from '../_global/models/attackModifierCard';
 import { allCards, perkCards, defaultCards, scenarioCards } from '../_global/data/attackModifierCards';
+import { CharacterClasses } from '../_global/data/characterClasses';
 import { Constants } from '../_global/constants';
 
 @Component({
@@ -38,12 +39,13 @@ export class DeckEditorComponent implements OnInit {
             console.log(`Retrieving Character "${characterName}"...`);
             const storageCharacterJson = localStorage.getItem(`char:${characterName}`);
             this.character = JSON.parse(storageCharacterJson);
+            this.character.class = CharacterClasses.get(this.character.class.name); // Get class from code
             console.log(`Loaded Character ${characterName}`);
             this.deck.cards = this.character.attackModifierDeck.cards;
             this.deck.shuffle();
             this.adjustHeights();
-            this.allCards = allCards;
-            this.classCards = this.character.class.perks ? [ ...defaultCards, ...this.character.class.perks, ...scenarioCards] : this.allCards
+            this.allCards = Array.from(allCards.values());
+            this.classCards = this.character.class.perks ? [...defaultCards, ...this.character.class.perks, ...scenarioCards] : this.allCards
             this.cardsToShow = {
                 cards: this.classCards,
                 nameToSwitchTo: 'All'
@@ -62,11 +64,9 @@ export class DeckEditorComponent implements OnInit {
     }
 
     public addCard(cardName: string) {
-        const newCard = this.allCards.find(card => {
-            return card.name === cardName;
-        });
+        const newCard = allCards.get(cardName);
         console.log('Added: ', newCard);
-        this.deck.cards.push(newCard.clone());
+        this.deck.cards.push(newCard);
         this.commitDeck();
     }
 
@@ -76,11 +76,11 @@ export class DeckEditorComponent implements OnInit {
     }
 
     public setDeck() {
-        if(this.cardsToShow.cards.length === this.classCards.length) {
+        if (this.cardsToShow.cards.length === this.classCards.length) {
             this.cardsToShow = {
                 cards: this.allCards,
                 nameToSwitchTo: 'Class'
-            } 
+            }
         } else {
             this.cardsToShow = {
                 cards: this.classCards,

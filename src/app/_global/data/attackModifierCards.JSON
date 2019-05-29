@@ -1,6 +1,5 @@
-[
-  {
-    "name": "Zero",
+[{
+    "name": "0",
     "adder": 0
   },
   {
@@ -24,6 +23,11 @@
     "name": "+2",
     "adder": 2,
     "defaultAmount": 1
+  },
+  {
+    "name": "+3",
+    "adder": 3,
+    "defaultAmount": 0
   },
   {
     "name": "0",
@@ -127,7 +131,7 @@
   {
     "name": "Rolling Pierce 3",
     "chained": true,
-    "pierce": 3 
+    "pierce": 3
   },
   {
     "name": "Rolling Add Target",
@@ -135,27 +139,27 @@
     "targets": 1
   },
   {
-    "name": "Rolling Pull One",
+    "name": "Rolling Pull 1",
     "chained": true,
     "pull": 1
   },
   {
-    "name": "Rolling Push One",
+    "name": "Rolling Push 1",
     "chained": true,
     "push": 2
   },
   {
-    "name": "Rolling Push Two",
+    "name": "Rolling Push 2",
     "chained": true,
     "push": 2
   },
   {
-    "name": "Rolling Self Heal One",
+    "name": "Rolling Self Heal 1",
     "chained": true,
     "selfHeal": 1
   },
   {
-    "name": "Rolling Sheild Self One",
+    "name": "Rolling Shield 1",
     "chained": true,
     "shield": 1
   },
@@ -178,17 +182,17 @@
     "stun": true
   },
   {
-    "name": "Push One +1",
+    "name": "Push 1 +1",
     "push": 1,
     "adder": 1
   },
   {
-    "name": "Pull One +1",
+    "name": "Pull 1 +1",
     "pull": 1,
     "adder": 1
   },
   {
-    "name": "Would +1",
+    "name": "Wound +1",
     "wound": true,
     "adder": 1
   },
@@ -208,12 +212,12 @@
     "adder": 1
   },
   {
-    "name": "Shield One +1",
+    "name": "Shield 1 +1",
     "shield": 1,
     "adder": 1
   },
   {
-    "name": "Self Heal Two +1",
+    "name": "Self Heal 2 +1",
     "selfHeal": 2,
     "adder": 1
   },
