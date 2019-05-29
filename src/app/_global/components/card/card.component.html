@@ -6,6 +6,7 @@
   <div *ngIf="card.poison" class="effect-icon poison"></div>
   <div *ngIf="card.wound" class="effect-icon wound"></div>
   <div *ngIf="card.immobilize" class="effect-icon immobilize"></div>
+  <div *ngIf="card.refreshItem" class="effect-icon refresh-item"></div>
   <div *ngIf="card.stun" class="effect-icon stun"></div>
   <div *ngIf="card.bless" class="effect-icon bless"></div>
   <div *ngIf="card.curse" class="effect-icon curse"></div>
@@ -17,16 +18,16 @@
     <div class='effect-text'>{{card.push}}</div>
   </div>
   <div *ngIf="card.pull" class="effect-icon pull">
-      <div class='effect-text'>{{card.pull}}</div>
+    <div class='effect-text'>{{card.pull}}</div>
   </div>
   <div *ngIf="card.disarm" class="effect-icon disarm"></div>
   <div *ngIf='card.targets' class='effect-icon target'></div>
   <div *ngIf='card.shield' class='effect-icon shield'>
-      <div class='effect-text'>{{card.shield}}</div>
+    <div class='effect-text'>{{card.shield}}</div>
   </div>
   <div *ngIf='card.heal || card.selfHeal' class='effect-icon heal'>
-      <div class='effect-text'>{{card.heal || card.selfHeal}}</div>
-  </div> 
+    <div class='effect-text'>{{card.heal || card.selfHeal}}</div>
+  </div>
 
   <div *ngIf="card.fire" class="effect-icon fire"></div>
   <div *ngIf="card.ice" class="effect-icon ice"></div>
