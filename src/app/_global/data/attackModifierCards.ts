@@ -7,18 +7,19 @@ export const perkCards: AttackModifierCard[] = [];
 export const scenarioCards: AttackModifierCard[] = [];
 
 cards.forEach(card => {
-    var attackModifierCard = new AttackModifierCard();
+    let attackModifierCard = new AttackModifierCard();
     Object.assign(attackModifierCard, card);
 
-    if (attackModifierCard.multiplier == 1) {
+    // Only adders use the image mapper
+    if (attackModifierCard.multiplier === 1) {
         attackModifierCard.centerImageUrl = imageMapper(attackModifierCard.adder);
     }
 
+    // Add to map of all cards
     allCards.set(card.name, attackModifierCard);
 
-    if (card.defaultAmount && card.defaultAmount > 0) {
-        defaultCards.push(attackModifierCard);
-    }
+    // Identify default cards by an existing default amount > 0
+    if (card.defaultAmount) { defaultCards.push(attackModifierCard); }
 });
 
 export function retrieveCard(name: string) {

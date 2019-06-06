@@ -7,13 +7,13 @@ const portraitMapper = name => `../../assets/images/portraits/${name.toLowerCase
 export const CharacterClasses = new Map();
 
 classes.forEach(cc => {
-    var characterClass = new CharacterClass();
+    let characterClass = new CharacterClass();
     characterClass.name = cc.name;
     characterClass.thumbnailUrl = portraitMapper(cc.name);
 
     if (cc.perks) {
         cc.perks.forEach(perk => {
-            var card = allCards.get(perk);
+            let card = allCards.get(perk);
             if (!card) {
                 console.warn(`Could not find perk card: ${perk} for class: ${cc.name}`);
             } else {

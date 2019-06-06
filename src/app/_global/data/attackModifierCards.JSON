@@ -1,8 +1,4 @@
 [{
-    "name": "0",
-    "adder": 0
-  },
-  {
     "name": "Bless",
     "multiplier": 2,
     "consumed": true,
