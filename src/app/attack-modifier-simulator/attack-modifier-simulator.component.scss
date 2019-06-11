@@ -250,3 +250,33 @@ $button-size: 125px;
         }
     }
 }
+
+.blink {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -ms-animation: blink normal 1.5s infinite ease-in-out;
+    -moz-animation: blink normal 1.5s infinite ease-in-out;
+    -webkit-animation: blink normal 1.5s infinite ease-in-out;
+    animation: blink normal 1.5s infinite ease-in-out;
+}
+
+@-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5 }
+    100% {opacity: 1 }
+}
+
+@-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5 }
+    100% {opacity: 1 }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5 }
+    100% {opacity: 1 }
+}

@@ -62,7 +62,7 @@
 
     <div class="attack-footer">
         <div class="attack shadow-3" title="Attack" (click)="openNumpad()"></div>
-        <div class="end-round shadow-3" title="End Round" (click)="proceedToNextRound()"></div>
+        <div class="end-round shadow-3" title="End Round" [ngClass]="{'blink': promptNextRound}" (click)="proceedToNextRound()"></div>
     </div>
 
 </div>

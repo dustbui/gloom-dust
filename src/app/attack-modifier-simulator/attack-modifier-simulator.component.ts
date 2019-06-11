@@ -69,6 +69,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
     public historyTabActive = true;
     public cardChances = [];
     public showAnalytics = false;
+    public promptNextRound = false;
     baseDamage = new FormControl('');
 
     @HostListener('window:resize', ['$event'])
@@ -174,6 +175,7 @@ export class AttackModifierSimulatorComponent implements OnInit {
 
     private startEndRoundTimeout() {
         this.manuallyProceeded = false; // Reset this flag
+        this.promptNextRound = false;
 
         // Prompt user to proceed to next round after 45 seconds
         this.endRoundTimeout = setTimeout(() => {
@@ -183,10 +185,8 @@ export class AttackModifierSimulatorComponent implements OnInit {
                 return;
             };
 
-            if (confirm("Would you like to proceed to the next round?")) {
-                this.proceedToNextRound();
-            }
-        }, 45000);
+            this.promptNextRound = true;
+        }, 30000);
     }
 
     private resetEndRoundTimeout() {
