@@ -57,13 +57,20 @@
     "name": "Eclipse"
   },
   {
-    "name": "Cthulhu"
+    "name": "Cthulhu",
+    "perks": [
+      "Wind +1", "Rolling Poison", "Rolling Curse", "Rolling Immobilize", "Rolling Stun"
+    ]
   },
   {
     "name": "Lightning"
   },
   {
-    "name": "Music"
+    "name": "Music",
+    "perks": [
+      "Rolling +1", "Stun", "+4", "Immobilize +1", "Disarm +1", "Wound +2", 
+      "Poison +2", "Curse +2", "Muddle +3", "Rolling Curse"
+    ]
   },
   {
     "name": "Angry",
@@ -85,6 +92,9 @@
     ]
   },
   {
-    "name": "Two"
+    "name": "Two",
+    "perks": [
+      "Rolling Self Heal 1", "Wound +1", "Immobilize +1", "Rolling Nature"
+    ]
   }
 ]

@@ -22,8 +22,11 @@
   },
   {
     "name": "+3",
-    "adder": 3,
-    "defaultAmount": 0
+    "adder": 3
+  },
+  {
+    "name": "+4",
+    "adder": 4
   },
   {
     "name": "0",
@@ -170,6 +173,11 @@
     "chained": true
   },
   {
+    "name": "Rolling Curse",
+    "chained": true,
+    "curse": true
+  },
+  {
     "name": "Add Target",
     "targets": 1
   },
@@ -218,6 +226,16 @@
     "adder": 1
   },
   {
+    "name": "Disarm +1",
+    "disarm": true,
+    "adder": 1
+  },
+  {
+    "name": "Wind +1",
+    "wind": true,
+    "adder": 1
+  },
+  {
     "name": "Fire +2",
     "adder": 2,
     "fire": true
@@ -230,6 +248,26 @@
   {
     "name": "Muddle +2",
     "adder": 2,
+    "muddle": true
+  },
+  {
+    "name": "Wound +2",
+    "adder": 2,
+    "wound": true
+  },
+  {
+    "name": "Poison +2",
+    "adder": 2,
+    "poison": true
+  },
+  {
+    "name": "Curse +2",
+    "adder": 2,
+    "curse": true
+  },
+  {
+    "name": "Muddle +3",
+    "adder": 3,
     "muddle": true
   },
   {
