@@ -33,6 +33,7 @@ function imageMapper(adder) {
         '2': "url(assets/images/cards/plus2.png)",
         '-1': "url(assets/images/cards/minus1.png)",
         '-2': "url(assets/images/cards/minus2.png)",
-        "3": "url(assets/images/cards/plus3.png)"
+        "3": "url(assets/images/cards/plus3.png)",
+        '4': "url(assets/images/cards/plus4.png)",
     }[adder]
 }
