@@ -103,6 +103,12 @@
     "disarm": true
   },
   {
+    "name": "Rolling Disarm +1",
+    "chained": true,
+    "disarm": true,
+    "adder": 1
+  },
+  {
     "name": "Rolling Stun",
     "chained": true,
     "stun": true
@@ -233,6 +239,21 @@
   {
     "name": "Wind +1",
     "wind": true,
+    "adder": 1
+  },
+  {
+    "name": "Dark -1",
+    "darkness": true,
+    "adder": -1
+  },
+  {
+    "name": "Dark +1",
+    "darkness": true,
+    "adder": 1
+  },
+  {
+    "name": "Invisible +1",
+    "invisible": true,
     "adder": 1
   },
   {

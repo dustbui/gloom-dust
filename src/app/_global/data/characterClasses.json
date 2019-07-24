@@ -51,10 +51,16 @@
     ]
   },
   {
-    "name": "Circles"
+    "name": "Circles",
+    "perks": [
+      "Rolling Wound", "Rolling Poison", "Rolling Self Heal 1", "Rolling Fire", "Rolling Wind", "Rolling Darkness", "Rolling Nature"
+    ]
   },
   {
-    "name": "Eclipse"
+    "name": "Eclipse",
+    "perks": [
+      "Dark -1", "Dark +1", "Invisible +1", "Rolling Muddle", "Rolling Self Heal 1", "Rolling Curse", "Rolling Add Target"
+    ]
   },
   {
     "name": "Cthulhu",
@@ -63,7 +69,10 @@
     ]
   },
   {
-    "name": "Lightning"
+    "name": "Lightning",
+    "perks": [
+      "Rolling +2", "Rolling Wound", "Rolling Stun", "Rolling Disarm + 1", "Rolling Self Heal 1", "Fire +2" 
+    ]
   },
   {
     "name": "Music",
